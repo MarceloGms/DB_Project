@@ -18,6 +18,7 @@ def db_connection():
 
     return db
 '''
+
 @app.route("/")
 def home():
     return "Hello, world!"

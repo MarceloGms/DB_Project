@@ -34,13 +34,12 @@ def register_consumer():
     con = db_connection()
     cur = con.cursor()
 
-    logger.info("---- new consumer registered  ----")
     logger.debug(f'payload: {payload}')
 
     cur.execute("begin transaction")
     cur.execute("""SELECT person_username
                      FROM consumer 
-                    WHERE person_username = %s""", payload["username"])
+                    WHERE person_username = %s""", (payload["username"],))
     rows = cur.fetchall()
 
     if len(rows) != 0:
@@ -50,7 +49,7 @@ def register_consumer():
     
     else: 
         statement = """INSERT INTO consumer(person_username, person_password, person_email, person_name, person_birthdate) 
-                       "VALUES (%s, %s, %s, %s, %s)"""
+                       VALUES (%s, %s, %s, %s, %s)"""
         values = (payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
 
         try:   
@@ -62,6 +61,7 @@ def register_consumer():
             rows = cur.fetchall()
             result = f'id: {rows[0][0]}'
             cur.execute("commit")
+            logger.info("---- new consumer registered  ----")
         except (Exception, psycopg2.DatabaseError) as error:
             logger.error(error)
             result = f'Error: {error}!'

@@ -134,3 +134,72 @@ API v1.0 online: http://localhost:5000/dbproj/
 
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:logger:###              DEMO: POST /consumer              ###
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:24:57] "[31m[1mPOST /dbproj/consumer HTTP/1.1[0m" 415 -
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:25:19] "[31m[1mPOST /dbproj/ HTTP/1.1[0m" 405 -
+INFO:logger:###              DEMO: POST /consumer              ###
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:25:50] "[31m[1mPOST /dbproj/consumer HTTP/1.1[0m" 415 -
+INFO:logger:###              DEMO: POST /consumer              ###
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:29:22] "[31m[1mPOST /dbproj/consumer HTTP/1.1[0m" 415 -
+INFO:logger:###              DEMO: POST /consumer              ###
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:29:53] "[31m[1mPOST /dbproj/consumer HTTP/1.1[0m" 415 -
+INFO:logger:###              DEMO: POST /consumer              ###
+INFO:logger:---- new consumer registered  ----
+DEBUG:logger:payload: {'username': 'marcelo', 'password': '123', 'email': 'aaa', 'name': 'Marcelo Gomes', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:34:19] "[35m[1mPOST /dbproj/consumer HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:logger:###              DEMO: POST /consumer              ###
+DEBUG:logger:payload: {'username': 'marcelo', 'password': '123', 'email': 'aaa', 'name': 'Marcelo Gomes', 'birthdate': '22/06/2003'}
+ERROR:logger:unterminated quoted identifier at or near ""VALUES ('marcelo', '123', 'aaa', 'Marcelo Gomes', '22/06/2003')"
+LINE 2:                        "VALUES ('marcelo', '123', 'aaa', 'Ma...
+                               ^
+
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:43:27] "POST /dbproj/consumer HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:logger:###              DEMO: POST /consumer              ###
+DEBUG:logger:payload: {'username': 'marcelo', 'password': '123', 'email': 'aaa', 'name': 'Marcelo Gomes', 'birthdate': '22/06/2003'}
+ERROR:logger:null value in column "subscription_transactions_subs_id" of relation "consumer" violates not-null constraint
+DETAIL:  Failing row contains (null, 1, marcelo, aaa, 123, Marcelo Gomes, 2003-06-22).
+
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:45:12] "POST /dbproj/consumer HTTP/1.1" 200 -

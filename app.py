@@ -1,4 +1,3 @@
-
 from flask import Flask, jsonify, request
 import logging
 import psycopg2
@@ -6,7 +5,7 @@ import time
 
 app = Flask(__name__)
 
-#connect to the db
+# connect to the db
 def db_connection():
     db = psycopg2.connect(
         user='postgres',
@@ -16,25 +15,15 @@ def db_connection():
         database='musicfy')
     return db
 
-@app.route("/dbproj/")
-def home():
-    return "Hello, world!"
-
-'''
-@app.route('/dbproj/{song_id}', method=['PUT'])
-def play_song():
-    # playing deez
-    return
-'''
 @app.route('/dbproj/consumer', methods=['POST'])
 def register_consumer():
-    logger.info("###              DEMO: POST /consumer              ###")
+    app.logger.info("###              DEMO: POST /consumer              ###")
     payload = request.get_json()
 
     con = db_connection()
     cur = con.cursor()
 
-    logger.debug(f'payload: {payload}')
+    app.logger.debug(f'payload: {payload}')
 
     cur.execute("begin transaction")
     cur.execute("""SELECT person_username
@@ -61,9 +50,9 @@ def register_consumer():
             rows = cur.fetchall()
             result = f'id: {rows[0][0]}'
             cur.execute("commit")
-            logger.info("---- new consumer registered  ----")
+            app.logger.info("---- new consumer registered  ----")
         except (Exception, psycopg2.DatabaseError) as error:
-            logger.error(error)
+            app.logger.error(error)
             result = f'Error: {error}!'
             cur.execute("rollback")
 
@@ -76,8 +65,7 @@ def register_consumer():
 if __name__ == "__main__":
     # Set up the logging
     logging.basicConfig(filename="log_file.log")
-    logger = logging.getLogger('logger')
-    logger.setLevel(logging.DEBUG)
+    app.logger.setLevel(logging.DEBUG)
     ch = logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
 
@@ -86,11 +74,11 @@ if __name__ == "__main__":
                                   '%H:%M:%S')
     
     ch.setFormatter(formatter)
-    logger.addHandler(ch)
+    app.logger.addHandler(ch)
 
     time.sleep(1)
 
-    logger.info("\n---------------------------------------------------------------\n" +
-                "API v1.0 online: http://localhost:5000/dbproj/\n\n")
+    app.logger.info("\n---------------------------------------------------------------\n" +
+                    "API v1.0 online: http://localhost:5000/dbproj/\n\n")
     
     app.run(host="localhost", port="5000", debug=True, threaded=True)

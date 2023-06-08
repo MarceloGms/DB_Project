@@ -203,3 +203,43 @@ ERROR:logger:null value in column "subscription_transactions_subs_id" of relatio
 DETAIL:  Failing row contains (null, 1, marcelo, aaa, 123, Marcelo Gomes, 2003-06-22).
 
 INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 19:45:12] "POST /dbproj/consumer HTTP/1.1" 200 -
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:logger:###              DEMO: POST /consumer              ###
+DEBUG:logger:payload: {'username': 'marcelo', 'password': '123', 'email': 'aaa', 'name': 'Marcelo Gomes', 'birthdate': '22/06/2003'}
+INFO:logger:---- new consumer registered  ----
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 20:12:02] "POST /dbproj/consumer HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /consumer              ###
+DEBUG:app:payload: {'username': 'anibal', 'password': '123', 'email': 'aaa', 'name': 'Anibal', 'birthdate': '22/06/2003'}
+INFO:app:---- new consumer registered  ----
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 20:23:45] "POST /dbproj/consumer HTTP/1.1" 200 -

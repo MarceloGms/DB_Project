@@ -1,0 +1,136 @@
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:18:50] "[33mGET /dbproj/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:19:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:47] "[33mGET /dbproj/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:30:13] "GET /dbproj/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385

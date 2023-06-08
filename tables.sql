@@ -1,11 +1,10 @@
 CREATE TABLE consumer (
-	subscription_transactions_subs_id BIGINT NOT NULL,
-	person_id			 BIGSERIAL,
-	person_username			 VARCHAR(512) NOT NULL,
-	person_email			 VARCHAR(512) NOT NULL,
-	person_password			 VARCHAR(512) NOT NULL,
-	person_name			 VARCHAR(512) NOT NULL,
-	person_birthdate			 DATE NOT NULL,
+	person_id	 BIGSERIAL,
+	person_username	 VARCHAR(512) NOT NULL,
+	person_email	 VARCHAR(512) NOT NULL,
+	person_password	 VARCHAR(512) NOT NULL,
+	person_name	 VARCHAR(512) NOT NULL,
+	person_birthdate DATE NOT NULL,
 	PRIMARY KEY(person_id)
 );
 
@@ -111,6 +110,12 @@ CREATE TABLE consumer_pre_paid_card (
 	PRIMARY KEY(pre_paid_card_id_card)
 );
 
+CREATE TABLE consumer_subscription_transactions (
+	consumer_person_id		 BIGINT,
+	subscription_transactions_subs_id BIGINT,
+	PRIMARY KEY(consumer_person_id,subscription_transactions_subs_id)
+);
+
 CREATE TABLE artist_song (
 	artist_person_id BIGINT,
 	song_ismn	 BIGINT,
@@ -142,7 +147,6 @@ CREATE TABLE song_playlist (
 );
 
 ALTER TABLE consumer ADD UNIQUE (person_username);
-ALTER TABLE consumer ADD CONSTRAINT consumer_fk1 FOREIGN KEY (subscription_transactions_subs_id) REFERENCES subscription_transactions(subs_id);
 ALTER TABLE artist ADD UNIQUE (artistic_name, person_username);
 ALTER TABLE artist ADD CONSTRAINT artist_fk1 FOREIGN KEY (record_label_label_id) REFERENCES record_label(label_id);
 ALTER TABLE artist ADD CONSTRAINT artist_fk2 FOREIGN KEY (administrator_person_id) REFERENCES administrator(person_id);
@@ -160,6 +164,8 @@ ALTER TABLE activity ADD CONSTRAINT activity_fk1 FOREIGN KEY (song_ismn) REFEREN
 ALTER TABLE activity ADD CONSTRAINT activity_fk2 FOREIGN KEY (consumer_person_id) REFERENCES consumer(person_id);
 ALTER TABLE consumer_pre_paid_card ADD CONSTRAINT consumer_pre_paid_card_fk1 FOREIGN KEY (consumer_person_id) REFERENCES consumer(person_id);
 ALTER TABLE consumer_pre_paid_card ADD CONSTRAINT consumer_pre_paid_card_fk2 FOREIGN KEY (pre_paid_card_id_card) REFERENCES pre_paid_card(id_card);
+ALTER TABLE consumer_subscription_transactions ADD CONSTRAINT consumer_subscription_transactions_fk1 FOREIGN KEY (consumer_person_id) REFERENCES consumer(person_id);
+ALTER TABLE consumer_subscription_transactions ADD CONSTRAINT consumer_subscription_transactions_fk2 FOREIGN KEY (subscription_transactions_subs_id) REFERENCES subscription_transactions(subs_id);
 ALTER TABLE artist_song ADD CONSTRAINT artist_song_fk1 FOREIGN KEY (artist_person_id) REFERENCES artist(person_id);
 ALTER TABLE artist_song ADD CONSTRAINT artist_song_fk2 FOREIGN KEY (song_ismn) REFERENCES song(ismn);
 ALTER TABLE consumer_playlist ADD CONSTRAINT consumer_playlist_fk1 FOREIGN KEY (consumer_person_id) REFERENCES consumer(person_id);

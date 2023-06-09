@@ -461,3 +461,131 @@ INFO:werkzeug: * Debugger PIN: 133-639-385
 INFO:app:###              DEMO: POST /register              ###
 DEBUG:app:payload: {'username': 'anibal', 'password': '123', 'email': 'aaa', 'name': 'Anibal', 'birthdate': '22/06/2003'}
 INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 17:38:23] "POST /dbproj/register HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /register              ###
+DEBUG:app:payload: {'username': 'anibal', 'password': '123', 'email': 'aaa', 'name': 'Anibal', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:35:47] "[35m[1mPOST /dbproj/register HTTP/1.1[0m" 500 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /register              ###
+DEBUG:app:payload: {'username': 'anibal', 'password': '123', 'email': 'aaa', 'name': 'Anibal', 'birthdate': '22/06/2003'}
+INFO:app:---- new consumer registered  ----
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:36:58] "POST /dbproj/register HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /login              ###
+DEBUG:app:payload: {'username': 'anibal', 'password': '123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:39:49] "POST /dbproj/login HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /register              ###
+DEBUG:app:payload: {'username': 'anibal', 'password': '123', 'email': 'aaa', 'name': 'Anibal', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:39:55] "POST /dbproj/register HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /register              ###
+DEBUG:app:payload: {'username': 'rui', 'password': '123', 'email': 'aaa', 'name': 'rui', 'birthdate': '22/06/2003'}
+INFO:app:---- new consumer registered  ----
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:43:46] "POST /dbproj/register HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /login              ###
+DEBUG:app:payload: {'username': 'marcelo 123', 'password': '123'}
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:49:16] "POST /dbproj/login HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /login              ###
+DEBUG:app:payload: {'username': 'anibal 123', 'password': '123'}
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:49:41] "POST /dbproj/login HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /login              ###
+DEBUG:app:payload: {'username': 'anibal 123', 'password': '123'}
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:49:44] "POST /dbproj/login HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /login              ###
+DEBUG:app:payload: {'username': 'marcelo', 'password': '123'}
+INFO:app:---- administrator logged in  ----
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:50:40] "POST /dbproj/login HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /login              ###
+DEBUG:app:payload: {'username': 'marcel', 'password': '123'}
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:50:45] "POST /dbproj/login HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /login              ###
+DEBUG:app:payload: {'username': 'marcelo', 'password': '12'}
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2023 18:50:53] "POST /dbproj/login HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:5000/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385

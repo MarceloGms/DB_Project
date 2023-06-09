@@ -45,42 +45,39 @@ def register_consumer():
 
     app.logger.debug(f'payload: {payload}')
 
-    # verify if username already exists
     cur.execute("begin transaction")
-    cur.execute("""SELECT person_username
-                    FROM consumer 
-                    WHERE person_username = %s""", (payload["username"],))
-    consumer_rows = cur.fetchall()
+    
+    # verify if username already exists
+    cur.execute("""SELECT username
+                     FROM person 
+                    WHERE username = %s""", (payload["username"],))
+    rows = cur.fetchall()
 
-    cur.execute("""SELECT person_username
-                    FROM artist 
-                    WHERE person_username = %s""", (payload["username"],))
-    artist_rows = cur.fetchall()
-
-    cur.execute("""SELECT person_username
-                    FROM administrator 
-                    WHERE person_username = %s""", (payload["username"],))
-    administrator_rows = cur.fetchall()
-
-    if len(consumer_rows) > 0 or len(artist_rows) > 0 or len(administrator_rows) > 0:
+    if len(rows) != 0:
         con.close()
-        result = "Error: username already exists!"
+        result = "Error: username already exists"
         return jsonify(result)
-
+    
     # insert consumer data
     else: 
-        statement = """INSERT INTO consumer(person_username, person_password, person_email, person_name, person_birthdate) 
+        statement = """INSERT INTO person(username, password, email, name, birthdate) 
                        VALUES (%s, %s, %s, %s, %s)"""
         values = (payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
 
         try:   
             cur.execute(statement, values)
    
-            cur.execute("""SELECT person_id
-                            FROM consumer 
-                            WHERE person_username = %s""", (payload["username"],))
-            rows = cur.fetchall()
-            result = f'Account created with id: {rows[0][0]}'
+            cur.execute("""SELECT id
+                            FROM person 
+                            WHERE username = %s""", (payload["username"],))
+            consumer_id = cur.fetchone()
+            consumer_id = consumer_id[0]
+
+            cur.execute("""INSERT INTO consumer (person_id)
+               VALUES (%s)""", (consumer_id,))
+            
+            result = f'Account created with id: {consumer_id}'
+
             cur.execute("commit")
             app.logger.info("---- new consumer registered  ----")
         except (Exception, psycopg2.DatabaseError) as error:
@@ -106,50 +103,58 @@ def login():
 
     cur.execute("begin transaction")
 
-    # verify if the tables are empty
-    cur.execute("""SELECT EXISTS (SELECT 1 FROM consumer WHERE person_username = %s)""", (payload["username"],))
-    consumer_exists = cur.fetchone()[0]
+    # verify if the table is empty
+    cur.execute("""SELECT EXISTS (SELECT 1 FROM person WHERE username = %s)""", (payload["username"],))
+    person_exists = cur.fetchone()[0]
 
-    cur.execute("""SELECT EXISTS (SELECT 1 FROM artist WHERE person_username = %s)""", (payload["username"],))
-    artist_exists = cur.fetchone()[0]
-
-    cur.execute("""SELECT EXISTS (SELECT 1 FROM administrator WHERE person_username = %s)""", (payload["username"],))
-    administrator_exists = cur.fetchone()[0]
-
-    if not consumer_exists and not artist_exists and not administrator_exists:
+    if not person_exists:
         con.close()
         result = "Error: username does not exist"
         return jsonify(result)
 
     # verify if the user exists
-    if consumer_exists:
-        cur.execute("""SELECT person_id, person_password, 'consumer' AS person_type
-                        FROM consumer
-                        WHERE person_username = %s""", (payload["username"],))
-        row = cur.fetchone()
-    elif artist_exists:
-        cur.execute("""SELECT person_id, person_password, 'artist' AS person_type
-                        FROM artist
-                        WHERE person_username = %s""", (payload["username"],))
-        row = cur.fetchone()
-    else:
-        cur.execute("""SELECT person_id, person_password, 'administrator' AS person_type
-                        FROM administrator
-                        WHERE person_username = %s""", (payload["username"],))
-        row = cur.fetchone()
+    cur.execute("""SELECT id, password
+                    FROM person
+                    WHERE username = %s""", (payload["username"],))
+    row = cur.fetchone()
 
     if row is None:
         con.close()
         result = "Error: username does not exist"
         return jsonify(result)
 
-    user_id, stored_password, user_type = row
+    user_id, stored_password = row
 
     # verify password
     if payload["password"] != stored_password:
         con.close()
         result = "Error: invalid password"
         return jsonify(result)
+    
+    # verify the user type
+    cur.execute("""SELECT person_id, 'consumer' AS type
+               FROM consumer
+               WHERE person_id = %s""", (user_id,))
+    row = cur.fetchone()
+
+    if row is None:
+        cur.execute("""SELECT person_id, 'artist' AS type
+                    FROM artist
+                    WHERE person_id = %s""", (user_id,))
+        row = cur.fetchone()
+
+        if row is None:
+            cur.execute("""SELECT person_id, 'administrator' AS type
+                        FROM administrator
+                        WHERE person_id = %s""", (user_id,))
+            row = cur.fetchone()
+
+    if row is None:
+        con.close()
+        result = "Error: user type not found"
+        return jsonify(result)
+
+    user_id, user_type = row
 
     #generate a token
     token = generate_token(user_id, user_type)
@@ -192,22 +197,12 @@ def add_artist():
     cur.execute("begin transaction")
     
     # verify if username already exists
-    cur.execute("""SELECT person_username
-                    FROM consumer 
-                    WHERE person_username = %s""", (payload["username"],))
-    consumer_rows = cur.fetchall()
+    cur.execute("""SELECT username
+                     FROM person 
+                    WHERE username = %s""", (payload["username"],))
+    rows = cur.fetchall()
 
-    cur.execute("""SELECT person_username
-                    FROM artist 
-                    WHERE person_username = %s""", (payload["username"],))
-    artist_rows = cur.fetchall()
-
-    cur.execute("""SELECT person_username
-                    FROM administrator 
-                    WHERE person_username = %s""", (payload["username"],))
-    administrator_rows = cur.fetchall()
-
-    if len(consumer_rows) > 0 or len(artist_rows) > 0 or len(administrator_rows) > 0:
+    if len(rows) != 0:
         con.close()
         result = "Error: username already exists"
         return jsonify(result)

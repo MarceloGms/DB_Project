@@ -1,10 +1,5 @@
 CREATE TABLE consumer (
-	person_id	 BIGSERIAL,
-	person_username	 VARCHAR(512) NOT NULL,
-	person_email	 VARCHAR(512) NOT NULL,
-	person_password	 VARCHAR(512) NOT NULL,
-	person_name	 VARCHAR(512) NOT NULL,
-	person_birthdate DATE NOT NULL,
+	person_id BIGINT,
 	PRIMARY KEY(person_id)
 );
 
@@ -12,23 +7,23 @@ CREATE TABLE artist (
 	artistic_name		 VARCHAR(512) NOT NULL,
 	record_label_label_id	 BIGINT NOT NULL,
 	administrator_person_id BIGINT NOT NULL,
-	person_id		 BIGSERIAL,
-	person_username	 VARCHAR(512) NOT NULL,
-	person_email		 VARCHAR(512) NOT NULL,
-	person_password	 VARCHAR(512) NOT NULL,
-	person_name		 VARCHAR(512) NOT NULL,
-	person_birthdate	 DATE NOT NULL,
+	person_id		 BIGINT,
 	PRIMARY KEY(person_id)
 );
 
 CREATE TABLE administrator (
-	person_id	 BIGSERIAL,
-	person_username	 VARCHAR(512) NOT NULL,
-	person_email	 VARCHAR(512) NOT NULL,
-	person_password	 VARCHAR(512) NOT NULL,
-	person_name	 VARCHAR(512) NOT NULL,
-	person_birthdate DATE NOT NULL,
+	person_id BIGINT,
 	PRIMARY KEY(person_id)
+);
+
+CREATE TABLE person (
+	id	 BIGSERIAL,
+	username	 VARCHAR(512) NOT NULL,
+	email	 VARCHAR(512) NOT NULL,
+	password	 VARCHAR(512) NOT NULL,
+	name	 VARCHAR(512) NOT NULL,
+	birthdate DATE NOT NULL,
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE song (
@@ -146,11 +141,13 @@ CREATE TABLE song_playlist (
 	PRIMARY KEY(song_ismn,playlist_playlist_id)
 );
 
-ALTER TABLE consumer ADD UNIQUE (person_username);
-ALTER TABLE artist ADD UNIQUE (artistic_name, person_username);
+ALTER TABLE consumer ADD CONSTRAINT consumer_fk1 FOREIGN KEY (person_id) REFERENCES person(id);
+ALTER TABLE artist ADD UNIQUE (artistic_name);
 ALTER TABLE artist ADD CONSTRAINT artist_fk1 FOREIGN KEY (record_label_label_id) REFERENCES record_label(label_id);
 ALTER TABLE artist ADD CONSTRAINT artist_fk2 FOREIGN KEY (administrator_person_id) REFERENCES administrator(person_id);
-ALTER TABLE administrator ADD UNIQUE (person_username);
+ALTER TABLE artist ADD CONSTRAINT artist_fk3 FOREIGN KEY (person_id) REFERENCES person(id);
+ALTER TABLE administrator ADD CONSTRAINT administrator_fk1 FOREIGN KEY (person_id) REFERENCES person(id);
+ALTER TABLE person ADD UNIQUE (username);
 ALTER TABLE song ADD CONSTRAINT song_fk1 FOREIGN KEY (record_label_label_id) REFERENCES record_label(label_id);
 ALTER TABLE comment ADD CONSTRAINT comment_fk1 FOREIGN KEY (consumer_person_id) REFERENCES consumer(person_id);
 ALTER TABLE comment ADD CONSTRAINT comment_fk2 FOREIGN KEY (comment_comment_id, comment_consumer_person_id) REFERENCES comment(comment_id, consumer_person_id);

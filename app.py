@@ -35,9 +35,9 @@ def verify_token(token):
         return None  
 
 
-@app.route('/dbproj/register', methods=['POST'])
-def register_consumer():
-    app.logger.info("###              DEMO: POST /register              ###")
+@app.route('/dbproj/user', methods=['POST'])
+def register():
+    app.logger.info("###              DEMO: POST /user              ###")
     payload = request.get_json()
 
     con = db_connection()
@@ -55,8 +55,12 @@ def register_consumer():
 
     if len(rows) != 0:
         con.close()
-        result = "Error: username already exists"
-        return jsonify(result)
+        result = {
+            "status": 400,
+            "errors": ["Username already exists"],
+            "results": None
+        }
+        return jsonify(result), 400
     
     # insert consumer data
     else: 
@@ -76,13 +80,21 @@ def register_consumer():
             cur.execute("""INSERT INTO consumer (person_id)
                VALUES (%s)""", (consumer_id,))
             
-            result = f'Account created with id: {consumer_id}'
+            result = {
+                "status": 200,
+                "errors": None,
+                "results": consumer_id
+            }
 
             cur.execute("commit")
             app.logger.info("---- new consumer registered  ----")
         except (Exception, psycopg2.DatabaseError) as error:
             app.logger.error(error)
-            result = f'Error: {error}'
+            result = {
+                "status": 500,
+                "errors": ["Internal Server Error"],
+                "results": None
+            }
             cur.execute("rollback")
 
         finally:
@@ -91,9 +103,9 @@ def register_consumer():
 
         return jsonify(result)
     
-@app.route('/dbproj/login', methods=['POST'])
+@app.route('/dbproj/user', methods=['PUT'])
 def login():
-    app.logger.info("###              DEMO: POST /login              ###")
+    app.logger.info("###              DEMO: PUT /user              ###")
     payload = request.get_json()
 
     con = db_connection()
@@ -103,155 +115,98 @@ def login():
 
     cur.execute("begin transaction")
 
-    # verify if the table is empty
-    cur.execute("""SELECT EXISTS (SELECT 1 FROM person WHERE username = %s)""", (payload["username"],))
-    person_exists = cur.fetchone()[0]
+    try:
+        # verify if the table is empty
+        cur.execute("""SELECT EXISTS (SELECT 1 FROM person WHERE username = %s)""", (payload["username"],))
+        person_exists = cur.fetchone()[0]
 
-    if not person_exists:
-        con.close()
-        result = "Error: username does not exist"
-        return jsonify(result)
+        if not person_exists:
+            con.close()
+            response = {
+                "status": 400,
+                "errors": ["Username does not exist"],
+                "results": None
+            }
+            return jsonify(response), 400
 
-    # verify if the user exists
-    cur.execute("""SELECT id, password
-                    FROM person
-                    WHERE username = %s""", (payload["username"],))
-    row = cur.fetchone()
-
-    if row is None:
-        con.close()
-        result = "Error: username does not exist"
-        return jsonify(result)
-
-    user_id, stored_password = row
-
-    # verify password
-    if payload["password"] != stored_password:
-        con.close()
-        result = "Error: invalid password"
-        return jsonify(result)
-    
-    # verify the user type
-    cur.execute("""SELECT person_id, 'consumer' AS type
-               FROM consumer
-               WHERE person_id = %s""", (user_id,))
-    row = cur.fetchone()
-
-    if row is None:
-        cur.execute("""SELECT person_id, 'artist' AS type
-                    FROM artist
-                    WHERE person_id = %s""", (user_id,))
+        # verify if the user exists
+        cur.execute("""SELECT id, password
+                        FROM person
+                        WHERE username = %s""", (payload["username"],))
         row = cur.fetchone()
 
         if row is None:
-            cur.execute("""SELECT person_id, 'administrator' AS type
-                        FROM administrator
+            con.close()
+            response = {
+                "status": 400,
+                "errors": ["Username does not exist"],
+                "results": None
+            }
+            return jsonify(response), 400
+
+        user_id, stored_password = row
+
+        # verify password
+        if payload["password"] != stored_password:
+            con.close()
+            response = {
+                "status": 400,
+                "errors": ["Invalid password"],
+                "results": None
+            }
+            return jsonify(response), 400
+
+        # verify the user type
+        cur.execute("""SELECT person_id, 'consumer' AS type
+                   FROM consumer
+                   WHERE person_id = %s""", (user_id,))
+        row = cur.fetchone()
+
+        if row is None:
+            cur.execute("""SELECT person_id, 'artist' AS type
+                        FROM artist
                         WHERE person_id = %s""", (user_id,))
             row = cur.fetchone()
 
-    if row is None:
-        con.close()
-        result = "Error: user type not found"
-        return jsonify(result)
+            if row is None:
+                cur.execute("""SELECT person_id, 'administrator' AS type
+                            FROM administrator
+                            WHERE person_id = %s""", (user_id,))
+                row = cur.fetchone()
 
-    user_id, user_type = row
-
-    #generate a token
-    token = generate_token(user_id, user_type)
-    result = "Logged in"
-    
-    cur.execute("commit")
-    app.logger.info(f"---- {user_type} logged in  ----")
-    con.close()
-    
-    return jsonify(result)
-
-@app.route('/dbproj/add_artist', methods=['POST'])
-def add_artist():
-    # admin verification
-    token = request.headers.get('Authorization')
-    if not token:
-        result = "Error: missing token"
-        return jsonify(result)
-
-    token = token.split('Bearer ')[-1]
-
-    payload = verify_token(token)
-    if not payload:
-        result = "Error: invalid token or token expired"
-        return jsonify(result)
-
-    user_type = payload['user_type']
-    admin_id = payload['user_id']
-
-    if user_type != 'admin':
-        result = "Error: only admins can add artists"
-        return jsonify(result)
-    
-    app.logger.info("###              DEMO: POST /add_artist              ###")
-    payload = request.get_json()
-    app.logger.debug(f'payload: {payload}')
-
-    con = db_connection()
-    cur = con.cursor()
-
-    cur.execute("begin transaction")
-    
-    # verify if username already exists
-    cur.execute("""SELECT username
-                     FROM person 
-                    WHERE username = %s""", (payload["username"],))
-    rows = cur.fetchall()
-
-    if len(rows) != 0:
-        con.close()
-        result = "Error: username already exists"
-        return jsonify(result)
-    
-    # insert artist data
-    else: 
-        statement = """INSERT INTO person(username, password, email, name, birthdate) 
-                       VALUES (%s, %s, %s, %s, %s)"""
-        values = (payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
-
-        cur.execute("""SELECT label_id
-                        FROM record_label
-                        WHERE name = %s""", (payload["record_name"],))
-        record_id = cur.fetchone()
-
-        if len(record_id) == 0:
+        if row is None:
             con.close()
-            result = "Error: record label doesnt exist"
-            return jsonify(result)
-        
-        record_id = record_id[0]
+            response = {
+                "status": 400,
+                "errors": ["User type not found"],
+                "results": None
+            }
+            return jsonify(response), 400
 
-        try:   
-            cur.execute(statement, values)
-   
-            cur.execute("""SELECT id
-                            FROM person 
-                            WHERE username = %s""", (payload["username"],))
-            artist_id = cur.fetchone()
-            artist_id = artist_id[0]
+        user_id, user_type = row
 
-            cur.execute("""INSERT INTO artist (artistic_name, record_label_label_id, administrator_person_id, person_id)
-               VALUES (%s)""", (payload["artistic_name"], record_id, admin_id, artist_id))
-            
-            result = f'Account created with id: {artist_id}'
+        # generate a token
+        token = generate_token(user_id, user_type)
+        response = {
+            "status": 200,
+            "errors": None,
+            "results": token
+        }
 
-            cur.execute("commit")
-            app.logger.info("---- new artist registered  ----")
-        except (Exception, psycopg2.DatabaseError) as error:
-            app.logger.error(error)
-            result = f'Error: {error}'
-            cur.execute("rollback")
+        cur.execute("commit")
+        app.logger.info(f"---- {user_type} logged in  ----")
+        con.close()
 
-        finally:
-            if con is not None:
-                con.close()
-
-        return jsonify(result)
+        return jsonify(response)
+    except Exception as e:
+        app.logger.error(e)
+        con.close()
+        result = {
+            "status": 500,
+            "errors": "Internal Server Error",
+            "results": None
+        }
+        return jsonify(result), 500
 
 @app.route('/dbproj/song', methods=['POST'])
 def add_song():
@@ -301,6 +256,6 @@ if __name__ == "__main__":
     time.sleep(1)
 
     app.logger.info("\n---------------------------------------------------------------\n" +
-                    "API v1.0 online: http://localhost:5000/dbproj/\n\n")
+                    "API v1.0 online: http://localhost:8080/dbproj/\n\n")
     
-    app.run(host="localhost", port="5000", debug=True, threaded=True)
+    app.run(host="localhost", port="8080", debug=True, threaded=True)

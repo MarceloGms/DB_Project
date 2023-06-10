@@ -213,7 +213,18 @@ def add_song():
     app.logger.info("###              DEMO: POST /song              ###")
 
     # artist verification
-    payload = verify_token(request.args['token'])
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+                "status": 400,
+                "errors": "Missing token",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
     if not payload:
         result = {
                 "status": 400,

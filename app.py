@@ -270,7 +270,7 @@ def add_song():
         if payload["other_artists"]:
             for artist in payload["other_artists"]:
                 cur.execute("""INSERT INTO artist_song (artist_person_id, song_ismn)
-                VALUES (%s)""", (artist, song_id))
+                VALUES (%s, %s)""", (artist, song_id))
 
         result = {
             "status": 200,

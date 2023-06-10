@@ -182,6 +182,7 @@ def add_artist():
         return jsonify(result)
 
     user_type = payload['user_type']
+    admin_id = payload['user_id']
 
     if user_type != 'admin':
         result = "Error: only admins can add artists"
@@ -209,20 +210,38 @@ def add_artist():
     
     # insert artist data
     else: 
-        statement = """INSERT INTO artist(artistic_name, person_username, person_password, person_email, person_name, person_birthdate) 
-                       VALUES (%s, %s, %s, %s, %s, %s)"""
-        values = (payload["artistic_name"], payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
+        statement = """INSERT INTO person(username, password, email, name, birthdate) 
+                       VALUES (%s, %s, %s, %s, %s)"""
+        values = (payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
+
+        cur.execute("""SELECT label_id
+                        FROM record_label
+                        WHERE name = %s""", (payload["record_name"],))
+        record_id = cur.fetchone()
+
+        if len(record_id) == 0:
+            con.close()
+            result = "Error: record label doesnt exist"
+            return jsonify(result)
+        
+        record_id = record_id[0]
 
         try:   
             cur.execute(statement, values)
    
-            cur.execute("""SELECT person_id
-                            FROM consumer 
-                            WHERE person_username = %s""", (payload["username"],))
-            rows = cur.fetchall()
-            result = f'Account created with id: {rows[0][0]}'
+            cur.execute("""SELECT id
+                            FROM person 
+                            WHERE username = %s""", (payload["username"],))
+            artist_id = cur.fetchone()
+            artist_id = artist_id[0]
+
+            cur.execute("""INSERT INTO artist (artistic_name, record_label_label_id, administrator_person_id, person_id)
+               VALUES (%s)""", (payload["artistic_name"], record_id, admin_id, artist_id))
+            
+            result = f'Account created with id: {artist_id}'
+
             cur.execute("commit")
-            app.logger.info("---- new consumer registered  ----")
+            app.logger.info("---- new artist registered  ----")
         except (Exception, psycopg2.DatabaseError) as error:
             app.logger.error(error)
             result = f'Error: {error}'

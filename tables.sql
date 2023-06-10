@@ -83,7 +83,7 @@ CREATE TABLE album (
 
 CREATE TABLE subscription_transactions (
 	subs_id			 BIGSERIAL,
-	plan				 BOOL NOT NULL,
+	plan				 VARCHAR(512) NOT NULL,
 	date_start			 DATE NOT NULL,
 	date_finish			 DATE NOT NULL,
 	transactions_transaction_id	 BIGSERIAL NOT NULL,

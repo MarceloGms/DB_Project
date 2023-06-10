@@ -57,7 +57,7 @@ def register():
         con.close()
         result = {
             "status": 400,
-            "errors": ["Username already exists"],
+            "errors": "Username already exists",
             "results": None
         }
         return jsonify(result), 400
@@ -92,7 +92,7 @@ def register():
             app.logger.error(error)
             result = {
                 "status": 500,
-                "errors": ["Internal Server Error"],
+                "errors": "Internal Server Error",
                 "results": None
             }
             cur.execute("rollback")
@@ -124,7 +124,7 @@ def login():
             con.close()
             response = {
                 "status": 400,
-                "errors": ["Username does not exist"],
+                "errors": "Username does not exist",
                 "results": None
             }
             return jsonify(response), 400
@@ -139,7 +139,7 @@ def login():
             con.close()
             response = {
                 "status": 400,
-                "errors": ["Username does not exist"],
+                "errors": "Username does not exist",
                 "results": None
             }
             return jsonify(response), 400
@@ -151,7 +151,7 @@ def login():
             con.close()
             response = {
                 "status": 400,
-                "errors": ["Invalid password"],
+                "errors": "Invalid password",
                 "results": None
             }
             return jsonify(response), 400
@@ -178,7 +178,7 @@ def login():
             con.close()
             response = {
                 "status": 400,
-                "errors": ["User type not found"],
+                "errors": "User type not found",
                 "results": None
             }
             return jsonify(response), 400
@@ -211,24 +211,13 @@ def login():
 @app.route('/dbproj/song', methods=['POST'])
 def add_song():
     app.logger.info("###              DEMO: POST /song              ###")
-    
+
     # artist verification
-    token = request.headers.get('Authorization')
-    if not token:
-        result = {
-                "status": 400,
-                "errors": ["Missing token"],
-                "results": None
-            }
-        return jsonify(result), 400
-
-    token = token.split('Bearer ')[-1]
-
-    payload = verify_token(token)
+    payload = verify_token(request.args['token'])
     if not payload:
         result = {
                 "status": 400,
-                "errors": ["Invalid token or token expired"],
+                "errors": "Invalid token or token expired",
                 "results": None
             }
         return jsonify(result), 400
@@ -239,7 +228,7 @@ def add_song():
     if user_type != 'artist':
         result = {
                 "status": 400,
-                "errors": ["Only artists can add songs"],
+                "errors": "Only artists can add songs",
                 "results": None
             }
         return jsonify(result), 400
@@ -283,7 +272,7 @@ def add_song():
         app.logger.error(error)
         result = {
             "status": 500,
-            "errors": ["Internal Server Error"],
+            "errors": "Internal Server Error",
             "results": None
         }
         cur.execute("rollback")

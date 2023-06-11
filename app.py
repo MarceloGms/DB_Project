@@ -520,10 +520,10 @@ def search_song():
             }
             return jsonify(result), 500
 
-@app.route('/dbproj/artist_info/{artist_id}', methods=['GET'])
-def artist_info(artist_id):
-    app.logger.info(f'###              DEMO: GET /artist_info/{artist_id}              ###')
-
+@app.route('/dbproj/artist_info', methods=['GET'])
+def artist_info():
+    app.logger.info("###              DEMO: GET /artist_info              ###")
+    artist_id = request.args.get('artist_id', '')
     # login verification
     token = request.headers.get('Authorization')
     if not token:

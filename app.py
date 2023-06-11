@@ -34,6 +34,29 @@ def verify_token(token):
     except jwt.InvalidTokenError:
         return None  
 
+def insert_song(cur, payload, artist_id):
+    statement = """INSERT INTO song(title, genre, release_date, duration, record_label_label_id) 
+                    VALUES (%s, %s, %s, %s, %s)"""
+    values = (payload["name"], payload["genre"], payload["release_date"], payload["duration"], payload["publisher"])
+
+    cur.execute(statement, values)
+
+    cur.execute("""SELECT ismn
+                    FROM song 
+                    WHERE title = %s AND record_label_label_id = %s""", (payload["name"], payload["publisher"]))
+    song_id = cur.fetchone()[0]
+
+    cur.execute("""INSERT INTO artist_song (artist_person_id, song_ismn)
+        VALUES (%s, %s)""", (artist_id, song_id))
+    
+    if payload["other_artists"]:
+        for artist in payload["other_artists"]:
+            cur.execute("""INSERT INTO artist_song (artist_person_id, song_ismn)
+            VALUES (%s, %s)""", (artist, song_id))
+    
+    app.logger.info("---- new song added  ----")
+
+    return song_id
 
 @app.route('/dbproj/user', methods=['POST'])
 def register():
@@ -74,8 +97,7 @@ def register():
             cur.execute("""SELECT id
                             FROM person 
                             WHERE username = %s""", (payload["username"],))
-            consumer_id = cur.fetchone()
-            consumer_id = consumer_id[0]
+            consumer_id = cur.fetchone()[0]
 
             cur.execute("""INSERT INTO consumer (person_id)
                VALUES (%s)""", (consumer_id,))
@@ -207,12 +229,14 @@ def login():
             "results": None
         }
         return jsonify(result), 500
+    
+# login required operations
 
 @app.route('/dbproj/song', methods=['POST'])
 def add_song():
     app.logger.info("###              DEMO: POST /song              ###")
 
-    # artist verification
+    # login and artist verification
     token = request.headers.get('Authorization')
     if not token:
         result = {
@@ -251,27 +275,9 @@ def add_song():
     cur = con.cursor()
 
     # song insertion
-    statement = """INSERT INTO song(title, genre, release_date, duration, record_label_label_id) 
-                    VALUES (%s, %s, %s, %s, %s)"""
-    values = (payload["name"], payload["genre"], payload["release_date"], payload["duration"], payload["publisher"])
-
     try:   
-        cur.execute(statement, values)
-
-        cur.execute("""SELECT ismn
-                        FROM song 
-                        WHERE title = %s""", (payload["name"],))
-        song_id = cur.fetchone()
-        song_id = song_id[0]
-
-        cur.execute("""INSERT INTO artist_song (artist_person_id, song_ismn)
-            VALUES (%s, %s)""", (artist_id, song_id))
+        song_id = insert_song(cur, payload, artist_id)
         
-        if payload["other_artists"]:
-            for artist in payload["other_artists"]:
-                cur.execute("""INSERT INTO artist_song (artist_person_id, song_ismn)
-                VALUES (%s, %s)""", (artist, song_id))
-
         result = {
             "status": 200,
             "errors": None,
@@ -279,7 +285,6 @@ def add_song():
         }
 
         cur.execute("commit")
-        app.logger.info("---- new song added  ----")
     except (Exception, psycopg2.DatabaseError) as error:
         app.logger.error(error)
         result = {
@@ -294,6 +299,131 @@ def add_song():
             con.close()
 
     return jsonify(result)
+
+@app.route('/dbproj/album', methods=['POST'])
+def add_album():
+    app.logger.info("###              DEMO: POST /album              ###")
+
+    # login and artist verification
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+                "status": 400,
+                "errors": "Missing token",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+                "status": 400,
+                "errors": "Invalid token or token expired",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    user_type = payload['user_type']
+    artist_id = payload['user_id']
+
+    if user_type != 'artist':
+        result = {
+                "status": 400,
+                "errors": "Only artists can add songs",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    payload = request.get_json()
+    app.logger.debug(f'payload: {payload}')
+
+    con = db_connection()
+    cur = con.cursor()
+
+    # album creation
+    statement = """INSERT INTO album(name, genre, release_date, record_label_label_id, artist_person_id) 
+                    VALUES (%s, %s, %s, %s, %s)"""
+    values = (payload["name"], payload["genre"], payload["release_date"], payload["publisher"], artist_id)
+
+    try:   
+        cur.execute(statement, values)
+
+        cur.execute("""SELECT album_id
+                    FROM album 
+                    WHERE name = %s AND artist_person_id = %s""", (payload["name"], artist_id))
+        album_id = cur.fetchone()[0]
+        
+        if payload["songs"]:
+            for song in payload["songs"]:
+                # verify if its a new song
+                if isinstance(song, dict):
+                    song_id = insert_song(cur, song, artist_id)
+
+                    cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
+                            VALUES (%s, %s)""", (song_id, album_id))
+                    
+                    result = {
+                        "status": 200,
+                        "errors": None,
+                        "results": album_id
+                    }
+
+                else:
+                    cur.execute("""SELECT artist_person_id
+                        FROM artist_song 
+                        WHERE song_ismn = %s""", (song,))
+                    real_artist = cur.fetchone()[0]
+                    if real_artist is None:
+                        result = {
+                            "status": 400,
+                            "errors": f'The song with id {song} does not exist',
+                            "results": None
+                        }
+                        break
+                    real_artist = real_artist[0]
+                    # verify if the artist created the song
+                    if artist_id == real_artist:
+                        cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
+                                VALUES (%s, %s)""", (song, album_id))
+                        
+                        result = {
+                            "status": 200,
+                            "errors": None,
+                            "results": album_id
+                        }
+                    else:
+                        result = {
+                            "status": 400,
+                            "errors": f'The song with id {song} is not from the artist with id {artist_id}',
+                            "results": None
+                        }
+                        break
+
+        else:
+            result = {
+                "status": 400,
+                "errors": "The album needs at least one song",
+                "results": None
+            }
+
+        cur.execute("commit")
+        app.logger.info("---- new album added  ----")
+    except (Exception, psycopg2.DatabaseError) as error:
+        app.logger.error(error)
+        result = {
+            "status": 500,
+            "errors": "Internal Server Error",
+            "results": None
+        }
+        cur.execute("rollback")
+
+    finally:
+        if con is not None:
+            con.close()
+
+    return jsonify(result) 
     
 if __name__ == "__main__":
     # Set up the logging

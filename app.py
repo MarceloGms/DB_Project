@@ -423,7 +423,102 @@ def add_album():
         if con is not None:
             con.close()
 
-    return jsonify(result) 
+    return jsonify(result)
+
+@app.route('/dbproj/artist_info/{artist_id}', methods=['GET'])
+def artist_info():
+    artist_id = request.args.get('artist_id', '')
+    app.logger.info(f'###              DEMO: GET /artist_info/{artist_id}              ###')
+
+    # login verification
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+                "status": 400,
+                "errors": "Missing token",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+                "status": 400,
+                "errors": "Invalid token or token expired",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    con = db_connection()
+    cur = con.cursor()
+
+    try:
+        # verify if the table is empty
+        cur.execute("""SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = %s)""", (artist_id,))
+        person_exists = cur.fetchone()[0]
+
+        if not person_exists:
+            con.close()
+            response = {
+                "status": 400,
+                "errors": "Artist does not exist",
+                "results": None
+            }
+            return jsonify(response), 400
+
+        # artist info
+        query = """
+            SELECT a.artistic_name, s.ismn AS song_id, al.album_id, p.playlist_id
+            FROM artist AS a
+            LEFT JOIN artist_song AS asg ON asg.artist_person_id = a.person_id
+            LEFT JOIN song AS s ON s.ismn = asg.song_ismn
+            LEFT JOIN song_album AS sa ON sa.song_ismn = s.ismn
+            LEFT JOIN album AS al ON al.album_id = sa.album_album_id
+            LEFT JOIN song_playlist AS sp ON sp.song_ismn = s.ismn
+            LEFT JOIN playlist AS p ON p.playlist_id = sp.playlist_playlist_id
+            WHERE a.person_id = %s
+        """
+        cur.execute(query, (artist_id,))
+        rows = cur.fetchall()
+
+        if not rows:
+            result = {
+                "status": 400,
+                "errors": "Artist not found",
+                "results": None
+            }
+            con.close()
+            return jsonify(result), 400
+        
+        artist_name = rows[0]['artistic_name']
+        song_ids = [id['song_id'] for id in rows if id['song_id']]
+        album_ids = [id['album_id'] for id in rows if id['album_id']]
+        playlist_ids = [id['playlist_id'] for id in rows if id['playlist_id']]
+
+        result = {
+        "status": 200,
+        "errors": None,
+        "results": {
+            "name": artist_name,
+            "songs": song_ids,
+            "albums": album_ids,
+            "playlists": playlist_ids
+        }
+    }
+
+        return jsonify(result)
+    except Exception as e:
+        app.logger.error(e)
+        con.close()
+        result = {
+            "status": 500,
+            "errors": "Internal Server Error",
+            "results": None
+        }
+        return jsonify(result), 500
+    
     
 if __name__ == "__main__":
     # Set up the logging

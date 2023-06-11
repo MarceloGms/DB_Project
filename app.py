@@ -425,8 +425,8 @@ def add_album():
 
     return jsonify(result)
 
-@app.route('/dbproj/song', methods=['GET'])
-def search_song():
+@app.route('/dbproj/song/<keyword>', methods=['GET'])
+def search_song(keyword):
     app.logger.info("###              DEMO: GET /song/              ###")
     
     # token verification
@@ -449,9 +449,6 @@ def search_song():
                 "results": None
             }
         return jsonify(result), 400
-    
-    # Extract the keyword from the request parameters
-    keyword = request.args.get('keyword', '')
 
     con = db_connection()
     cur = con.cursor()
@@ -520,10 +517,9 @@ def search_song():
             }
             return jsonify(result), 500
 
-@app.route('/dbproj/artist_info', methods=['GET'])
-def artist_info():
+@app.route('/dbproj/artist_info/<artist_id>', methods=['GET'])
+def artist_info(artist_id):
     app.logger.info("###              DEMO: GET /artist_info              ###")
-    artist_id = request.args.get('artist_id', '')
     # login verification
     token = request.headers.get('Authorization')
     if not token:
@@ -586,10 +582,10 @@ def artist_info():
             con.close()
             return jsonify(result), 400
         
-        artist_name = rows[0]['artistic_name']
-        song_ids = [id['song_id'] for id in rows if id['song_id']]
-        album_ids = [id['album_id'] for id in rows if id['album_id']]
-        playlist_ids = [id['playlist_id'] for id in rows if id['playlist_id']]
+        artist_name = rows[0][0]
+        song_ids = [id[1] for id in rows if id[1]]
+        album_ids = [id[2] for id in rows if id[2]]
+        playlist_ids = [id[3] for id in rows if id[3]]
 
         result = {
             "status": 200,

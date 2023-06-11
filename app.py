@@ -425,6 +425,101 @@ def add_album():
 
     return jsonify(result)
 
+@app.route('/dbproj/song', methods=['GET'])
+def search_song():
+    app.logger.info("###              DEMO: GET /song/              ###")
+    
+    # token verification
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+                "status": 400,
+                "errors": ["Missing token"],
+                "results": None
+            }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+                "status": 400,
+                "errors": ["Invalid token or token expired"],
+                "results": None
+            }
+        return jsonify(result), 400
+    
+    # Extract the keyword from the request parameters
+    keyword = request.args.get('keyword', '')
+
+    con = db_connection()
+    cur = con.cursor()
+    try:
+        # Perform the song search
+        cur.execute("""SELECT song.title, artist.artistic_name, song_album.album_album_id
+                    FROM song
+                    LEFT JOIN artist_song ON artist_song.song_ismn = song.ismn
+                    LEFT JOIN artist ON artist.person_id = artist_song.artist_person_id
+                    LEFT JOIN song_album ON song_album.song_ismn = song.ismn
+                    WHERE title ILIKE %s""", ('%' + keyword + '%',))
+        rows = cur.fetchall()
+
+        # Prepare the response
+        a = 0
+        if rows:
+            songs = []
+            last_title = ""
+            names = []
+            for row in rows:
+                title, name, album_id = row
+                if title != last_title:
+                    if a != 0:
+                        songs.append(song_data)
+                        names = []
+                    last_title = title
+                    names.append(name)
+                    song_data = {
+                        "title": title,
+                        "artists": names,
+                        "albums": album_id
+                    }
+                    a = 1
+                else:
+                    names.append(name)
+                    song_data = {
+                        "title": title,
+                        "artists": names,
+                        "albums": album_id
+                    }
+            if a != 0:
+                songs.append(song_data)
+
+            result = {
+                "status": 200,
+                "errors": None,
+                "results": songs
+            }
+        else:
+            result = {
+                "status": 400,
+                "errors": "No songs found",
+                "results": None
+            }
+
+        con.close()
+        return jsonify(result)
+    
+    except Exception as e:
+            app.logger.error(e)
+            con.close()
+            result = {
+                "status": 500,
+                "errors": "Internal Server Error",
+                "results": None
+            }
+            return jsonify(result), 500
+
 @app.route('/dbproj/artist_info/{artist_id}', methods=['GET'])
 def artist_info(artist_id):
     app.logger.info(f'###              DEMO: GET /artist_info/{artist_id}              ###')
@@ -497,15 +592,15 @@ def artist_info(artist_id):
         playlist_ids = [id['playlist_id'] for id in rows if id['playlist_id']]
 
         result = {
-        "status": 200,
-        "errors": None,
-        "results": {
-            "name": artist_name,
-            "songs": song_ids,
-            "albums": album_ids,
-            "playlists": playlist_ids
+            "status": 200,
+            "errors": None,
+            "results": {
+                "name": artist_name,
+                "songs": song_ids,
+                "albums": album_ids,
+                "playlists": playlist_ids
+            }
         }
-    }
 
         return jsonify(result)
     except Exception as e:
@@ -518,7 +613,133 @@ def artist_info(artist_id):
         }
         return jsonify(result), 500
     
-    
+@app.route('/dbproj/subscription', methods=['POST'])
+def subscribe():
+    app.logger.info("###              DEMO: POST /subscription              ###")
+
+    # login and artist verification
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+                "status": 400,
+                "errors": "Missing token",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+                "status": 400,
+                "errors": "Invalid token or token expired",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    user_type = payload['user_type']
+    consumer_id = payload['user_id']
+
+    if user_type != 'consumer':
+        result = {
+                "status": 400,
+                "errors": "Only artists can add songs",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    payload = request.get_json()
+    app.logger.debug(f'payload: {payload}')
+
+    con = db_connection()
+    cur = con.cursor()
+
+    # subscription operations
+
+    statement = """INSERT INTO subscription_transactions(name, genre, release_date, record_label_label_id, artist_person_id) 
+                    VALUES (%s, %s, %s, %s, %s)"""
+    values = (payload["name"], payload["genre"], payload["release_date"], payload["publisher"], artist_id)
+
+    try:   
+        cur.execute(statement, values)
+
+        cur.execute("""SELECT album_id
+                    FROM album 
+                    WHERE name = %s AND artist_person_id = %s""", (payload["name"], artist_id))
+        album_id = cur.fetchone()[0]
+        
+        if payload["songs"]:
+            for song in payload["songs"]:
+                # verify if its a new song
+                if isinstance(song, dict):
+                    song_id = insert_song(cur, song, artist_id)
+
+                    cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
+                            VALUES (%s, %s)""", (song_id, album_id))
+                    
+                    result = {
+                        "status": 200,
+                        "errors": None,
+                        "results": album_id
+                    }
+
+                else:
+                    cur.execute("""SELECT artist_person_id
+                        FROM artist_song 
+                        WHERE song_ismn = %s""", (song,))
+                    real_artist = cur.fetchone()[0]
+                    if real_artist is None:
+                        result = {
+                            "status": 400,
+                            "errors": f'The song with id {song} does not exist',
+                            "results": None
+                        }
+                        break
+                    real_artist = real_artist[0]
+                    # verify if the artist created the song
+                    if artist_id == real_artist:
+                        cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
+                                VALUES (%s, %s)""", (song, album_id))
+                        
+                        result = {
+                            "status": 200,
+                            "errors": None,
+                            "results": album_id
+                        }
+                    else:
+                        result = {
+                            "status": 400,
+                            "errors": f'The song with id {song} is not from the artist with id {artist_id}',
+                            "results": None
+                        }
+                        break
+
+        else:
+            result = {
+                "status": 400,
+                "errors": "The album needs at least one song",
+                "results": None
+            }
+
+        cur.execute("commit")
+        app.logger.info("---- new album added  ----")
+    except (Exception, psycopg2.DatabaseError) as error:
+        app.logger.error(error)
+        result = {
+            "status": 500,
+            "errors": "Internal Server Error",
+            "results": None
+        }
+        cur.execute("rollback")
+
+    finally:
+        if con is not None:
+            con.close()
+
+    return jsonify(result)
+
+
 if __name__ == "__main__":
     # Set up the logging
     logging.basicConfig(filename="log_file.log")

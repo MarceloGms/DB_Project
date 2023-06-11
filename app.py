@@ -308,10 +308,10 @@ def add_album():
     token = request.headers.get('Authorization')
     if not token:
         result = {
-                "status": 400,
-                "errors": "Missing token",
-                "results": None
-            }
+            "status": 400,
+            "errors": "Missing token",
+            "results": None
+        }
         return jsonify(result), 400
 
     token = token.split('Bearer ')[-1]
@@ -319,10 +319,10 @@ def add_album():
     payload = verify_token(token)
     if not payload:
         result = {
-                "status": 400,
-                "errors": "Invalid token or token expired",
-                "results": None
-            }
+            "status": 400,
+            "errors": "Invalid token or token expired",
+            "results": None
+        }
         return jsonify(result), 400
 
     user_type = payload['user_type']
@@ -330,10 +330,10 @@ def add_album():
 
     if user_type != 'artist':
         result = {
-                "status": 400,
-                "errors": "Only artists can add songs",
-                "results": None
-            }
+            "status": 400,
+            "errors": "Only artists can add songs",
+            "results": None
+        }
         return jsonify(result), 400
 
     payload = request.get_json()
@@ -347,34 +347,34 @@ def add_album():
                     VALUES (%s, %s, %s, %s, %s)"""
     values = (payload["name"], payload["genre"], payload["release_date"], payload["publisher"], artist_id)
 
-    try:   
+    try:
         cur.execute(statement, values)
 
         cur.execute("""SELECT album_id
                     FROM album 
                     WHERE name = %s AND artist_person_id = %s""", (payload["name"], artist_id))
         album_id = cur.fetchone()[0]
-        
+
         if payload["songs"]:
             for song in payload["songs"]:
-                # verify if its a new song
+                # verify if it's a new song
                 if isinstance(song, dict):
                     song_id = insert_song(cur, song, artist_id)
 
                     cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
                             VALUES (%s, %s)""", (song_id, album_id))
-                    
+
                     result = {
                         "status": 200,
                         "errors": None,
                         "results": album_id
                     }
-
-                else:
+                # existing song id
+                elif isinstance(song, int):
                     cur.execute("""SELECT artist_person_id
                         FROM artist_song 
                         WHERE song_ismn = %s""", (song,))
-                    real_artist = cur.fetchone()[0]
+                    real_artist = cur.fetchone()
                     if real_artist is None:
                         result = {
                             "status": 400,
@@ -387,7 +387,7 @@ def add_album():
                     if artist_id == real_artist:
                         cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
                                 VALUES (%s, %s)""", (song, album_id))
-                        
+
                         result = {
                             "status": 200,
                             "errors": None,
@@ -400,6 +400,13 @@ def add_album():
                             "results": None
                         }
                         break
+                else:
+                    result = {
+                        "status": 400,
+                        "errors": "Invalid song format",
+                        "results": None
+                    }
+                    break
 
         else:
             result = {
@@ -424,6 +431,7 @@ def add_album():
             con.close()
 
     return jsonify(result)
+
 
 @app.route('/dbproj/song/<keyword>', methods=['GET'])
 def search_song(keyword):
@@ -635,7 +643,6 @@ def subscribe():
         return jsonify(result), 400
 
     user_type = payload['user_type']
-    consumer_id = payload['user_id']
 
     if user_type != 'consumer':
         result = {

@@ -426,8 +426,7 @@ def add_album():
     return jsonify(result)
 
 @app.route('/dbproj/artist_info/{artist_id}', methods=['GET'])
-def artist_info():
-    artist_id = request.args.get('artist_id', '')
+def artist_info(artist_id):
     app.logger.info(f'###              DEMO: GET /artist_info/{artist_id}              ###')
 
     # login verification

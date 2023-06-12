@@ -144,12 +144,12 @@ def login():
 
         if not person_exists:
             con.close()
-            response = {
+            result = {
                 "status": 400,
                 "errors": "Username does not exist",
                 "results": None
             }
-            return jsonify(response), 400
+            return jsonify(result), 400
 
         # verify if the user exists
         cur.execute("""SELECT id, password
@@ -159,24 +159,24 @@ def login():
 
         if row is None:
             con.close()
-            response = {
+            result = {
                 "status": 400,
                 "errors": "Username does not exist",
                 "results": None
             }
-            return jsonify(response), 400
+            return jsonify(result), 400
 
         user_id, stored_password = row
 
         # verify password
         if payload["password"] != stored_password:
             con.close()
-            response = {
+            result = {
                 "status": 400,
                 "errors": "Invalid password",
                 "results": None
             }
-            return jsonify(response), 400
+            return jsonify(result), 400
 
         # verify the user type
         cur.execute("""SELECT person_id, 'consumer' AS type
@@ -198,18 +198,18 @@ def login():
 
         if row is None:
             con.close()
-            response = {
+            result = {
                 "status": 400,
                 "errors": "User type not found",
                 "results": None
             }
-            return jsonify(response), 400
+            return jsonify(result), 400
 
         user_id, user_type = row
 
         # generate a token
         token = generate_token(user_id, user_type)
-        response = {
+        result = {
             "status": 200,
             "errors": None,
             "results": token
@@ -217,9 +217,7 @@ def login():
 
         cur.execute("commit")
         app.logger.info(f"---- {user_type} logged in  ----")
-        con.close()
 
-        return jsonify(response)
     except Exception as e:
         app.logger.error(e)
         con.close()
@@ -229,6 +227,12 @@ def login():
             "results": None
         }
         return jsonify(result), 500
+    
+    finally:
+        if con is not None:
+            con.close()
+        
+        return jsonify(result)
     
 # login required operations
 
@@ -435,7 +439,7 @@ def add_album():
 
 @app.route('/dbproj/song/<keyword>', methods=['GET'])
 def search_song(keyword):
-    app.logger.info("###              DEMO: GET /song/              ###")
+    app.logger.info(f'###              DEMO: GET /song/{keyword}              ###')
     
     # token verification
     token = request.headers.get('Authorization')
@@ -462,58 +466,39 @@ def search_song(keyword):
     cur = con.cursor()
     try:
         # Perform the song search
-        cur.execute("""SELECT song.title, artist.artistic_name, song_album.album_album_id
+        cur.execute("""SELECT song.ismn, song.title,
+                        array_agg(DISTINCT artist.artistic_name),
+                        array_agg(DISTINCT song_album.album_album_id) FILTER (WHERE song_album.album_album_id IS NOT NULL)
                     FROM song
                     LEFT JOIN artist_song ON artist_song.song_ismn = song.ismn
                     LEFT JOIN artist ON artist.person_id = artist_song.artist_person_id
                     LEFT JOIN song_album ON song_album.song_ismn = song.ismn
-                    WHERE title ILIKE %s""", ('%' + keyword + '%',))
+                    WHERE title ILIKE %s
+                    GROUP BY song.ismn, song.title, song.record_label_label_id""", ('%' + keyword + '%',))
         rows = cur.fetchall()
 
-        # Prepare the response
-        a = 0
-        if rows:
-            songs = []
-            last_title = ""
-            names = []
-            for row in rows:
-                title, name, album_id = row
-                if title != last_title:
-                    if a != 0:
-                        songs.append(song_data)
-                        names = []
-                    last_title = title
-                    names.append(name)
-                    song_data = {
-                        "title": title,
-                        "artists": names,
-                        "albums": album_id
-                    }
-                    a = 1
-                else:
-                    names.append(name)
-                    song_data = {
-                        "title": title,
-                        "artists": names,
-                        "albums": album_id
-                    }
-            if a != 0:
-                songs.append(song_data)
-
-            result = {
-                "status": 200,
-                "errors": None,
-                "results": songs
-            }
-        else:
+        if not rows:
             result = {
                 "status": 400,
-                "errors": "No songs found",
+                "errors": "No results found",
                 "results": None
             }
+            con.close()
+            return jsonify(result), 400
 
-        con.close()
-        return jsonify(result)
+        data = []
+        for row in rows:
+            data.append({
+            'title': row[1],
+            'artists': row[2],
+            'albums': row[3]
+            })
+
+        result = {
+            "status": 200,
+            "errors": None,
+            "results": data
+        }
     
     except Exception as e:
             app.logger.error(e)
@@ -524,10 +509,15 @@ def search_song(keyword):
                 "results": None
             }
             return jsonify(result), 500
+    
+    finally:
+        if con is not None:
+            con.close()
+        return jsonify(result)
 
 @app.route('/dbproj/artist_info/<artist_id>', methods=['GET'])
 def artist_info(artist_id):
-    app.logger.info("###              DEMO: GET /artist_info              ###")
+    app.logger.info(f'###              DEMO: GET /artist_info/{artist_id}              ###')
     # login verification
     token = request.headers.get('Authorization')
     if not token:
@@ -559,16 +549,19 @@ def artist_info(artist_id):
 
         if not person_exists:
             con.close()
-            response = {
+            result = {
                 "status": 400,
                 "errors": "Artist does not exist",
                 "results": None
             }
-            return jsonify(response), 400
+            return jsonify(result), 400
 
         # artist info
         query = """
-            SELECT a.artistic_name, s.ismn AS song_id, al.album_id, p.playlist_id
+            SELECT DISTINCT a.artistic_name,
+              array_agg(DISTINCT s.ismn) FILTER (WHERE s.ismn IS NOT NULL) AS song_id,
+              array_agg(DISTINCT al.album_id) FILTER (WHERE al.album_id IS NOT NULL),
+              array_agg(DISTINCT p.playlist_id) FILTER (WHERE p.playlist_id IS NOT NULL)
             FROM artist AS a
             LEFT JOIN artist_song AS asg ON asg.artist_person_id = a.person_id
             LEFT JOIN song AS s ON s.ismn = asg.song_ismn
@@ -577,9 +570,11 @@ def artist_info(artist_id):
             LEFT JOIN song_playlist AS sp ON sp.song_ismn = s.ismn
             LEFT JOIN playlist AS p ON p.playlist_id = sp.playlist_playlist_id
             WHERE a.person_id = %s
+            GROUP BY a
         """
+
         cur.execute(query, (artist_id,))
-        rows = cur.fetchall()
+        rows = cur.fetchone()
 
         if not rows:
             result = {
@@ -589,24 +584,13 @@ def artist_info(artist_id):
             }
             con.close()
             return jsonify(result), 400
-        
-        artist_name = rows[0][0]
-        song_ids = [id[1] for id in rows if id[1]]
-        album_ids = [id[2] for id in rows if id[2]]
-        playlist_ids = [id[3] for id in rows if id[3]]
 
         result = {
             "status": 200,
             "errors": None,
-            "results": {
-                "name": artist_name,
-                "songs": song_ids,
-                "albums": album_ids,
-                "playlists": playlist_ids
-            }
+            "results": rows
         }
 
-        return jsonify(result)
     except Exception as e:
         app.logger.error(e)
         con.close()
@@ -616,6 +600,11 @@ def artist_info(artist_id):
             "results": None
         }
         return jsonify(result), 500
+    
+    finally:
+        if con is not None:
+            con.close()
+        return jsonify(result)
     
 @app.route('/dbproj/subscription', methods=['POST'])
 def subscribe():

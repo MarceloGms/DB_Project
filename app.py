@@ -615,7 +615,7 @@ def artist_info(artist_id):
 def subscribe():
     app.logger.info("###              DEMO: POST /subscription              ###")
 
-    # login and artist verification
+    # login and consumer verification
     token = request.headers.get('Authorization')
     if not token:
         result = {
@@ -641,7 +641,7 @@ def subscribe():
     if user_type != 'consumer':
         result = {
                 "status": 400,
-                "errors": "Only artists can add songs",
+                "errors": "Only consumers can subscribe to premium",
                 "results": None
             }
         return jsonify(result), 400
@@ -653,6 +653,21 @@ def subscribe():
     cur = con.cursor()
 
     # subscription operations
+
+    if payload["period"] not in ["month", "quarter", "semester"]:
+        result = {
+                "status": 400,
+                "errors": "Invalid period",
+                "results": None
+            }
+        return jsonify(result), 400
+    
+    ####################################################################################################################
+    #                                                                                                                  #
+    #                                                  incompleto                                                      #
+    #                                                                                                                  #
+    ####################################################################################################################
+
 
     statement = """INSERT INTO subscription_transactions(name, genre, release_date, record_label_label_id, artist_person_id) 
                     VALUES (%s, %s, %s, %s, %s)"""
@@ -681,6 +696,50 @@ def subscribe():
             con.close()
 
     return jsonify(result)
+
+@app.route('/dbproj/card', methods=['POST'])
+def create_card():
+    app.logger.info("###              DEMO: POST /card              ###")
+
+    # login and admin verification
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+                "status": 400,
+                "errors": "Missing token",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+                "status": 400,
+                "errors": "Invalid token or token expired",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    user_type = payload['user_type']
+    admin_id = payload['user_id']
+
+    if user_type != 'administrator':
+        result = {
+                "status": 400,
+                "errors": "Only consumers can subscribe to premium",
+                "results": None
+            }
+        return jsonify(result), 400
+
+    payload = request.get_json()
+    app.logger.debug(f'payload: {payload}')
+
+    con = db_connection()
+    cur = con.cursor()
+
+    # operations
 
 
 if __name__ == "__main__":

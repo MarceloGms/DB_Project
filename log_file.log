@@ -3931,3 +3931,23 @@ INFO:app:###              DEMO: POST /playlist              ###
 DEBUG:app:payload: {'playlist_name': 'ALL', 'visibility': 'public', 'songs': [13, 14, 15]}
 INFO:app:---- new playlist added  ----
 INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:06:01] "POST /dbproj/playlist HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /card              ###
+DEBUG:app:payload: {'number_cards': 3, 'card_price': 50}
+INFO:app:---- cards added ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:59:52] "POST /dbproj/card HTTP/1.1" 200 -

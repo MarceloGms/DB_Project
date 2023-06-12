@@ -89,7 +89,7 @@ def register():
         return jsonify(result), 400
     
     # insert consumer data
-    else: 
+    if 'label_id' not in payload and 'artistic_name' not in payload:
         statement = """INSERT INTO person(username, password, email, name, birthdate) 
                        VALUES (%s, %s, %s, %s, %s)"""
         values = (payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
@@ -127,6 +127,75 @@ def register():
                 con.close()
 
         return jsonify(result)
+    else:
+        token = request.headers.get('Authorization')
+        if not token:
+            result = {
+                    "status": 400,
+                    "errors": "Missing token",
+                    "results": None
+                }
+            return jsonify(result), 400
+
+        token = token.split('Bearer ')[-1]
+
+        payload = verify_token(token)
+        if not payload:
+            result = {
+                    "status": 400,
+                    "errors": "Invalid token or token expired",
+                    "results": None
+                }
+            return jsonify(result), 400
+
+        user_type = payload['user_type']
+        admin_id = payload['user_id']
+
+        if user_type != 'administrator':
+            result = {
+                    "status": 400,
+                    "errors": "Only admins can add artists",
+                    "results": None
+                }
+            return jsonify(result), 400
+        
+        # insert artist data
+        statement = """INSERT INTO person(username, password, email, name, birthdate) 
+                    VALUES (%s, %s, %s, %s, %s)"""
+        values = (payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
+
+        try:   
+            cur.execute(statement, values)
+
+            cur.execute("""SELECT id
+                            FROM person 
+                            WHERE username = %s""", (payload["username"],))
+            artist_id = cur.fetchone()
+            artist_id = artist_id[0]
+
+            cur.execute("""INSERT INTO artist (artistic_name, record_label_label_id, administrator_person_id, person_id)
+            VALUES (%s)""", (payload["artistic_name"], payload["label_id"], admin_id, artist_id))
+
+            result = {
+                "status": 200,
+                "errors": None,
+                "results": artist_id
+            }
+
+            cur.execute("commit")
+            app.logger.info("---- new artist registered  ----")
+        except (Exception, psycopg2.DatabaseError) as error:
+            app.logger.error(error)
+            result = {
+                "status": 500,
+                "errors": "Internal Server Error",
+                "results": None
+            }
+            cur.execute("rollback")
+        finally:
+            if con is not None:
+                con.close()
+        return jsonify(result)
     
 @app.route('/dbproj/user', methods=['PUT'])
 def login():
@@ -137,8 +206,6 @@ def login():
     cur = con.cursor()
 
     app.logger.debug(f'payload: {payload}')
-
-    cur.execute("begin transaction")
 
     try:
         # verify if the table is empty
@@ -218,7 +285,6 @@ def login():
             "results": token
         }
 
-        cur.execute("commit")
         app.logger.info(f"---- {user_type} logged in  ----")
 
     except Exception as e:
@@ -280,6 +346,8 @@ def add_song():
 
     con = db_connection()
     cur = con.cursor()
+
+    cur.execute("begin transaction")
 
     # song insertion
     try:   
@@ -353,6 +421,8 @@ def add_album():
     statement = """INSERT INTO album(name, genre, release_date, record_label_label_id, artist_person_id) 
                     VALUES (%s, %s, %s, %s, %s)"""
     values = (payload["name"], payload["genre"], payload["release_date"], payload["publisher"], artist_id)
+
+    cur.execute("begin transaction")
 
     try:
         cur.execute(statement, values)
@@ -502,7 +572,8 @@ def search_song(keyword):
             "errors": None,
             "results": data
         }
-    
+
+        app.logger.info("---- got songs  ----")
     except Exception as e:
             app.logger.error(e)
             con.close()
@@ -599,6 +670,7 @@ def artist_info(artist_id):
             }
         }
 
+        app.logger.info("---- got artist ----")
     except Exception as e:
         app.logger.error(e)
         con.close()
@@ -676,6 +748,8 @@ def subscribe():
                     VALUES (%s, %s, %s, %s, %s)"""
     values = (payload["name"], payload["genre"], payload["release_date"], payload["publisher"], )
 
+    cur.execute("begin transaction")
+
     try:   
         cur.execute(statement, values)
 
@@ -741,6 +815,8 @@ def create_playlist():
 
     con = db_connection()
     cur = con.cursor()
+
+    cur.execute("begin transaction")
 
     try:
         # Find if consumer is premium
@@ -889,6 +965,8 @@ def create_card():
 
     con = db_connection()
     cur = con.cursor()
+
+    cur.execute("begin transaction")
 
     # operations
     try:

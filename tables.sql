@@ -62,7 +62,7 @@ CREATE TABLE record_label (
 );
 
 CREATE TABLE pre_paid_card (
-	id_card		 BIGSERIAL,
+	id_card		 VARCHAR(512),
 	limit_date		 DATE NOT NULL,
 	card_price		 SMALLINT NOT NULL,
 	administrator_person_id BIGINT NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE activity (
 
 CREATE TABLE consumer_pre_paid_card (
 	consumer_person_id	 BIGINT NOT NULL,
-	pre_paid_card_id_card BIGINT,
+	pre_paid_card_id_card VARCHAR(512),
 	PRIMARY KEY(pre_paid_card_id_card)
 );
 
@@ -123,7 +123,7 @@ CREATE TABLE consumer_playlist (
 
 CREATE TABLE subscription_transactions_pre_paid_card (
 	subscription_transactions_subs_id BIGINT,
-	pre_paid_card_id_card		 BIGINT,
+	pre_paid_card_id_card		 VARCHAR(512),
 	PRIMARY KEY(subscription_transactions_subs_id,pre_paid_card_id_card)
 );
 

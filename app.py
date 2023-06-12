@@ -491,7 +491,7 @@ def search_song(keyword):
             data.append({
             'title': row[1],
             'artists': row[2],
-            'albums': row[3]
+            'albums': row[3] 
             })
 
         result = {
@@ -570,7 +570,7 @@ def artist_info(artist_id):
             LEFT JOIN song_playlist AS sp ON sp.song_ismn = s.ismn
             LEFT JOIN playlist AS p ON p.playlist_id = sp.playlist_playlist_id
             WHERE a.person_id = %s
-            GROUP BY a
+            GROUP BY a.artistic_name
         """
 
         cur.execute(query, (artist_id,))
@@ -588,7 +588,12 @@ def artist_info(artist_id):
         result = {
             "status": 200,
             "errors": None,
-            "results": rows
+            "results": {
+                "name": rows[0],
+                "songs": rows[1] if rows[1] is not None else [],
+                "albums": rows[2] if rows[2] is not None else [],
+                "playlists": rows[3] if rows[3] is not None else []
+            }
         }
 
     except Exception as e:
@@ -651,71 +656,17 @@ def subscribe():
 
     statement = """INSERT INTO subscription_transactions(name, genre, release_date, record_label_label_id, artist_person_id) 
                     VALUES (%s, %s, %s, %s, %s)"""
-    values = (payload["name"], payload["genre"], payload["release_date"], payload["publisher"], artist_id)
+    values = (payload["name"], payload["genre"], payload["release_date"], payload["publisher"], )
 
     try:   
         cur.execute(statement, values)
 
         cur.execute("""SELECT album_id
                     FROM album 
-                    WHERE name = %s AND artist_person_id = %s""", (payload["name"], artist_id))
+                    WHERE name = %s AND artist_person_id = %s""", (payload["name"], ))
         album_id = cur.fetchone()[0]
         
-        if payload["songs"]:
-            for song in payload["songs"]:
-                # verify if its a new song
-                if isinstance(song, dict):
-                    song_id = insert_song(cur, song, artist_id)
-
-                    cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
-                            VALUES (%s, %s)""", (song_id, album_id))
-                    
-                    result = {
-                        "status": 200,
-                        "errors": None,
-                        "results": album_id
-                    }
-
-                else:
-                    cur.execute("""SELECT artist_person_id
-                        FROM artist_song 
-                        WHERE song_ismn = %s""", (song,))
-                    real_artist = cur.fetchone()[0]
-                    if real_artist is None:
-                        result = {
-                            "status": 400,
-                            "errors": f'The song with id {song} does not exist',
-                            "results": None
-                        }
-                        break
-                    real_artist = real_artist[0]
-                    # verify if the artist created the song
-                    if artist_id == real_artist:
-                        cur.execute("""INSERT INTO song_album (song_ismn, album_album_id)
-                                VALUES (%s, %s)""", (song, album_id))
-                        
-                        result = {
-                            "status": 200,
-                            "errors": None,
-                            "results": album_id
-                        }
-                    else:
-                        result = {
-                            "status": 400,
-                            "errors": f'The song with id {song} is not from the artist with id {artist_id}',
-                            "results": None
-                        }
-                        break
-
-        else:
-            result = {
-                "status": 400,
-                "errors": "The album needs at least one song",
-                "results": None
-            }
-
-        cur.execute("commit")
-        app.logger.info("---- new album added  ----")
+        
     except (Exception, psycopg2.DatabaseError) as error:
         app.logger.error(error)
         result = {

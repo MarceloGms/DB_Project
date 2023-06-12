@@ -969,3 +969,91 @@ DEBUG:app:payload: {'name': 'album fixe', 'release_date': '22/06/2003', 'genre':
 INFO:app:---- new song added  ----
 INFO:app:---- new album added  ----
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:48:10] "POST /dbproj/album HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: GET /artist_info/1              ###
+ERROR:app:column "a.artistic_name" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 2:             SELECT DISTINCT a.artistic_name,
+                                    ^
+
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 14:59:53] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: GET /artist_info/1              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:00:59] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: GET /artist_info/1              ###
+ERROR:app:list index out of range
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:04:14] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: GET /artist_info/1              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:06:36] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -

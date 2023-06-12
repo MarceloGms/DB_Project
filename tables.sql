@@ -30,7 +30,7 @@ CREATE TABLE song (
 	title		 VARCHAR(512) NOT NULL,
 	genre		 VARCHAR(512) NOT NULL,
 	release_date		 DATE NOT NULL,
-	duration		 TIMESTAMP NOT NULL,
+	duration		 SMALLINT NOT NULL,
 	record_label_label_id BIGINT NOT NULL,
 	PRIMARY KEY(ismn)
 );
@@ -73,7 +73,6 @@ CREATE TABLE album (
 	album_id		 BIGSERIAL,
 	name			 VARCHAR(512) NOT NULL,
 	genre		 VARCHAR(512) NOT NULL,
-	publisher		 VARCHAR(512) NOT NULL,
 	release_date		 DATE NOT NULL,
 	record_label_label_id BIGINT NOT NULL,
 	artist_person_id	 BIGINT NOT NULL,

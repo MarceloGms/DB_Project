@@ -43,9 +43,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -54,7 +54,7 @@ API v1.0 online: http://localhost:5000/dbproj/
 
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:47] "[33mGET /dbproj/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:47] "[33mGET /dbproj/ HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:52] "GET / HTTP/1.1" 200 -
 INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
 INFO:werkzeug: * Restarting with stat
@@ -70,9 +70,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -89,9 +89,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -114,9 +114,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -836,14 +836,18 @@ API v1.0 online: http://localhost:8080/dbproj/
 
 
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Debugger PIN: 133-639-385
 INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+DEBUG:app:payload: {'username': 'aaa', 'password': '123'}
 INFO:app:---- artist logged in  ----
-INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:42:32] "PUT /dbproj/user HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /song              ###
-INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:45:22] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:55:32] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:invalid input syntax for type bigint: ""
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:56:01] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
 INFO:werkzeug: * Restarting with stat
 INFO:app:
 ---------------------------------------------------------------
@@ -1144,7 +1148,7 @@ DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10-06
 ERROR:app:not all arguments converted during string formatting
 INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:16:05] "POST /dbproj/song HTTP/1.1" 200 -
 INFO:app:###              DEMO: POST /song              ###
-DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10-06-2023', 'duration': 180, 'publisher': 1222, 'other_artists': ['Mc Zé']}
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10-06-2023', 'duration': 180, 'publisher': 1222, 'other_artists': ['Mc Zï¿½']}
 ERROR:app:not all arguments converted during string formatting
 INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:16:33] "POST /dbproj/song HTTP/1.1" 200 -
 INFO:app:###              DEMO: POST /song              ###

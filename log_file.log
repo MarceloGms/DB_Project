@@ -43,9 +43,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -54,7 +54,7 @@ API v1.0 online: http://localhost:5000/dbproj/
 
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:47] "[33mGET /dbproj/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:47] "[33mGET /dbproj/ HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [08/Jun/2023 18:24:52] "GET / HTTP/1.1" 200 -
 INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
 INFO:werkzeug: * Restarting with stat
@@ -70,9 +70,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -89,9 +89,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -114,9 +114,9 @@ INFO:logger:
 API v1.0 online: http://localhost:5000/dbproj/
 
 
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 INFO:logger:
 ---------------------------------------------------------------
@@ -690,14 +690,7 @@ API v1.0 online: http://localhost:8080/dbproj/
 
 
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'mars', 'password': '123'}
-INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:40:57] "[31m[1mPUT /dbproj/user HTTP/1.1[0m" 400 -
-INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'rui', 'password': '123'}
-INFO:app:---- consumer logged in  ----
-INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:41:35] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug: * Debugger PIN: 370-778-157
 INFO:app:
 ---------------------------------------------------------------
 API v1.0 online: http://localhost:8080/dbproj/
@@ -713,7 +706,121 @@ API v1.0 online: http://localhost:8080/dbproj/
 
 
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: POST /user              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 16:18:12] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'username': 'rui', 'password': '123', 'email': 'aaa', 'name': 'rui', 'birthdate': '22/06/2003'}
+INFO:app:---- new consumer registered  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 16:33:05] "POST /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'username': 'rui', 'password': '123', 'email': 'aaa', 'name': 'rui', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 16:47:37] "[31m[1mPOST /dbproj/user HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: POST /song              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 16:52:05] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'mars', 'password': '123'}
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:30:02] "[31m[1mPUT /dbproj/user HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'brites', 'password': 'brites321'}
+ERROR:app:module 'jwt' has no attribute 'encode'
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:32:41] "[35m[1mPUT /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+ERROR:app:module 'jwt' has no attribute 'encode'
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:33:39] "[35m[1mPUT /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+ERROR:app:module 'jwt' has no attribute 'encode'
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:34:26] "[35m[1mPUT /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+ERROR:app:module 'jwt' has no attribute 'encode'
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:37:09] "[35m[1mPUT /dbproj/user HTTP/1.1[0m" 500 -
 INFO:app:
 ---------------------------------------------------------------
 API v1.0 online: http://localhost:8080/dbproj/
@@ -747,15 +854,6 @@ INFO:app:
 API v1.0 online: http://localhost:8080/dbproj/
 
 
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /artist_info              ###
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:57:14] "[31m[1mGET /dbproj/artist_info HTTP/1.1[0m" 400 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://localhost:8080
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
@@ -766,167 +864,109 @@ API v1.0 online: http://localhost:8080/dbproj/
 
 
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'aaa', 'password': '123'}
-INFO:app:---- artist logged in  ----
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:29:27] "PUT /dbproj/user HTTP/1.1" 200 -
-INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'aaa', 'password': '123'}
-INFO:app:---- artist logged in  ----
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:29:34] "PUT /dbproj/user HTTP/1.1" 200 -
-INFO:app:###              DEMO: GET /artist_info              ###
-ERROR:app:tuple indices must be integers or slices, not str
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:30:08] "[35m[1mGET /dbproj/artist_info/1 HTTP/1.1[0m" 500 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /artist_info              ###
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:38:23] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Debugger PIN: 370-778-157
 INFO:app:###              DEMO: POST /song              ###
-DEBUG:app:payload: {'name': 'aaa', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1222, 'other_artists': []}
-ERROR:app:insert or update on table "song" violates foreign key constraint "song_fk1"
-DETAIL:  Key (record_label_label_id)=(1222) is not present in table "record_label".
-
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:36:54] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:59:02] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
 INFO:app:###              DEMO: POST /song              ###
-DEBUG:app:payload: {'name': 'aaa', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1, 'other_artists': []}
-INFO:app:---- new song added  ----
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:37:19] "POST /dbproj/song HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /album              ###
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:37:39] "[31m[1mPOST /dbproj/album HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 17:59:06] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: POST /song              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:06:00] "[35m[1mPOST /dbproj/song HTTP/1.1[0m" 500 -
 INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'aaa', 'password': '123'}
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
 INFO:app:---- artist logged in  ----
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:37:55] "PUT /dbproj/user HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /album              ###
-DEBUG:app:payload: {'name': '', 'release_date': '', 'genre': '', 'publisher': '', 'songs': [{'name': 'Azeite no Bacalhau', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1222, 'other_artists': []}, 2]}
-ERROR:app:invalid input syntax for type date: ""
-LINE 2:                     VALUES ('', '', '', '', 1)
-                                            ^
-
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:38:12] "POST /dbproj/album HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /album              ###
-DEBUG:app:payload: {'name': '', 'release_date': '', 'genre': '', 'publisher': '', 'songs': [{'name': 'Azeite no Bacalhau', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1222, 'other_artists': []}, 2]}
-ERROR:app:invalid input syntax for type date: ""
-LINE 2:                     VALUES ('', '', '', '', 1)
-                                            ^
-
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:38:36] "POST /dbproj/album HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /album              ###
-DEBUG:app:payload: {'name': 'album bacano', 'release_date': '22/06/2003', 'genre': 'Pimba', 'publisher': '1', 'songs': [{'name': 'Azeite no Bacalhau', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1222, 'other_artists': []}, 2]}
-ERROR:app:insert or update on table "song" violates foreign key constraint "song_fk1"
-DETAIL:  Key (record_label_label_id)=(1222) is not present in table "record_label".
-
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:39:48] "POST /dbproj/album HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /album              ###
-DEBUG:app:payload: {'name': 'album bacano', 'release_date': '22/06/2003', 'genre': 'Pimba', 'publisher': '1', 'songs': [{'name': 'Azeite no Bacalhau', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1, 'other_artists': []}, 2]}
-INFO:app:---- new song added  ----
-ERROR:app:'int' object is not subscriptable
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:40:03] "POST /dbproj/album HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:07:27] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:07:37] "[35m[1mPOST /dbproj/song HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
 INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
 INFO:app:
 ---------------------------------------------------------------
 API v1.0 online: http://localhost:8080/dbproj/
@@ -942,223 +982,67 @@ API v1.0 online: http://localhost:8080/dbproj/
 
 
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: POST /album              ###
-DEBUG:app:payload: {'name': 'album', 'release_date': '22/06/2003', 'genre': 'Pimba', 'publisher': '1', 'songs': [{'name': 'bbb', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1, 'other_artists': []}, 2]}
-INFO:app:---- new song added  ----
-ERROR:app:'int' object is not subscriptable
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:44:41] "POST /dbproj/album HTTP/1.1" 200 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: POST /album              ###
-DEBUG:app:payload: {'name': 'album fixe', 'release_date': '22/06/2003', 'genre': 'Pimba', 'publisher': '1', 'songs': [{'name': 'bcb', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1, 'other_artists': []}, 2]}
-INFO:app:---- new song added  ----
-INFO:app:---- new album added  ----
-INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:48:10] "POST /dbproj/album HTTP/1.1" 200 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /artist_info/1              ###
-ERROR:app:column "a.artistic_name" must appear in the GROUP BY clause or be used in an aggregate function
-LINE 2:             SELECT DISTINCT a.artistic_name,
-                                    ^
-
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 14:59:53] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /artist_info/1              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:00:59] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /artist_info/1              ###
-ERROR:app:list index out of range
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:04:14] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /artist_info/1              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:06:36] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /song/2              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:52:08] "GET /dbproj/song/2 HTTP/1.1" 200 -
-INFO:app:###              DEMO: GET /song/6              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:54:13] "GET /dbproj/song/6 HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /song/6              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:57:40] "GET /dbproj/song/6 HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /song/6              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:58:25] "GET /dbproj/song/6 HTTP/1.1" 200 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: GET /song/aaa              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:59:22] "GET /dbproj/song/aaa HTTP/1.1" 200 -
-INFO:app:###              DEMO: GET /song/a              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:02:49] "GET /dbproj/song/a HTTP/1.1" 200 -
-INFO:app:###              DEMO: GET /song/a              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:04:54] "GET /dbproj/song/a HTTP/1.1" 200 -
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Debugger PIN: 370-778-157
 INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'mars', 'password': '123'}
-INFO:app:---- administrator logged in  ----
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:23:31] "PUT /dbproj/user HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /card              ###
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:24:07] "[31m[1mPOST /dbproj/card HTTP/1.1[0m" 400 -
-INFO:app:###              DEMO: POST /card              ###
-DEBUG:app:payload: {'number_cards': 3, 'card_price': 25}
-ERROR:app:syntax error at or near "RETURNING"
-LINE 1: ... (limit_date, card_price, administrator_person_id RETURNING ...
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:26:13] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'song_name': 'Bacalhau', 'release_date': '10/06/2023', 'publisher': '1222'}
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:26:21] "[35m[1mPOST /dbproj/song HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Simao', 'song_name': 'Bacalhau', 'release_date': '10/06/2023', 'publisher': '1222'}
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:28:29] "[35m[1mPOST /dbproj/song HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '3:20', 'publisher': '1222', 'other_artists': []}
+ERROR:app:invalid input syntax for type timestamp: "3:20"
+LINE 2: ...       VALUES ('Bacalhau', 'Pimba', '10/06/2023', '3:20', '1...
                                                              ^
 
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:24:17] "POST /dbproj/card HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:34:14] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '0:3:20', 'publisher': '1222', 'other_artists': []}
+ERROR:app:invalid input syntax for type timestamp: "0:3:20"
+LINE 2: ...       VALUES ('Bacalhau', 'Pimba', '10/06/2023', '0:3:20', ...
+                                                             ^
+
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:34:59] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '00:03:20', 'publisher': '1222', 'other_artists': []}
+ERROR:app:invalid input syntax for type timestamp: "00:03:20"
+LINE 2: ...       VALUES ('Bacalhau', 'Pimba', '10/06/2023', '00:03:20'...
+                                                             ^
+
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:35:28] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '4/10/2023 00:03:20', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:36:26] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '4/10/2023 00:03:20', 'publisher': '1222', 'other_artists': ['Ze']}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:36:45] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '4/10/2023 00:03:20', 'publisher': '1222', 'other_artists': 'Ze'}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:38:50] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '4/10/2023 00:03:20', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:39:08] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '04/10/2023 00:03:20', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:40:43] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
 INFO:app:
 ---------------------------------------------------------------
 API v1.0 online: http://localhost:8080/dbproj/
@@ -1174,113 +1058,15 @@ API v1.0 online: http://localhost:8080/dbproj/
 
 
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: POST /card              ###
-DEBUG:app:payload: {'number_cards': 3, 'card_price': 25}
-ERROR:app:tuple index out of range
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:33:10] "POST /dbproj/card HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: POST /card              ###
-DEBUG:app:payload: {'number_cards': 3, 'card_price': 25}
-ERROR:app:tuple index out of range
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:35:35] "POST /dbproj/card HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /card              ###
-DEBUG:app:payload: {'number_cards': 3, 'card_price': 25}
-ERROR:app:tuple index out of range
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:35:39] "POST /dbproj/card HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:###              DEMO: POST /card              ###
-DEBUG:app:payload: {'number_cards': 3, 'card_price': 25}
-ERROR:app:tuple index out of range
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:37:22] "POST /dbproj/card HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://localhost:8080
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-INFO:app:
----------------------------------------------------------------
-API v1.0 online: http://localhost:8080/dbproj/
-
-
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: POST /song              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:42:06] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
 INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'mars', 'password': '123'}
-INFO:app:---- administrator logged in  ----
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:45:15] "PUT /dbproj/user HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /card              ###
-DEBUG:app:payload: {'number_cards': 3, 'card_price': 25}
-ERROR:app:invalid input syntax for type bigint: "ADOBPM"
-LINE 2:                                 VALUES ('ADOBPM', CURRENT_DA...
-                                                ^
-
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:45:50] "POST /dbproj/card HTTP/1.1" 200 -
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:42:29] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:42:37] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
 INFO:app:
 ---------------------------------------------------------------
 API v1.0 online: http://localhost:8080/dbproj/
@@ -1296,12 +1082,2852 @@ API v1.0 online: http://localhost:8080/dbproj/
 
 
 WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Debugger PIN: 370-778-157
 INFO:app:###              DEMO: PUT /user              ###
-DEBUG:app:payload: {'username': 'mars', 'password': '123'}
-INFO:app:---- administrator logged in  ----
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:50:12] "PUT /dbproj/user HTTP/1.1" 200 -
-INFO:app:###              DEMO: POST /card              ###
-DEBUG:app:payload: {'number_cards': 3, 'card_price': 25}
-INFO:app:---- cards added ----
-INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:50:45] "POST /dbproj/card HTTP/1.1" 200 -
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:43:15] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:43:20] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '04/10/2023 00:03:20', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:43:41] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '04/10/2023 00:03:20', 'publisher': 1222, 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:44:14] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:45:30] "[31m[1mPOST /dbproj/song HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '04-10-2023 00:03:20', 'publisher': 1222, 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:45:53] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10-06-2023', 'duration': '04-10-2023 00:03:20', 'publisher': 1222, 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 18:45:59] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:14:52] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10-06-2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:16:05] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10-06-2023', 'duration': 180, 'publisher': 1222, 'other_artists': ['Mc Z�']}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:16:33] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10-06-2023', 'duration': 180, 'publisher': 1222, 'other_artists': [1]}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:16:49] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': [1]}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:18:15] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': 'NULL'}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:18:41] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '180', 'publisher': '1222', 'other_artists': ''}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:28:30] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '180', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:28:49] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '180', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:28:50] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+ERROR:app:unsupported format character 'd' (0x64) at index 120
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:31:20] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:31:27] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+ERROR:app:unsupported format character 'd' (0x64) at index 120
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:31:38] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+ERROR:app:unsupported format character 'd' (0x64) at index 120
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:33:35] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:34:52] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+ERROR:app:unsupported format character 'd' (0x64) at index 123
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:34:55] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:35:28] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:35:31] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:39:53] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '180', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:39:56] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:42:08] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '180', 'publisher': '1222', 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:42:11] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': '180', 'publisher': '1222', 'other_artists': ['2']}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:42:47] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:43:00] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:43:27] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau', 'genre': 'Pimba', 'release_date': '10/06/2023', 'duration': 180, 'publisher': 1222, 'other_artists': []}
+INFO:app:---- new song added  ----
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2023 19:43:29] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 17:30:43] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 17:31:12] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:10:08] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Bacalhau Caralho', 'genre': 'Pimba', 'release_date': '05/01/2020', 'duration': 150, 'publisher': 1222, 'other_artists': []}
+INFO:app:---- new song added  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:10:49] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /song              ###
+DEBUG:app:payload: {'name': 'Azeite no Bacalhau', 'genre': 'Rap', 'release_date': '05/05/2010', 'duration': 210, 'publisher': 1222, 'other_artists': [2]}
+INFO:app:---- new song added  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:15:15] "POST /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:16:04] "[35m[1mGET /dbproj/song HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:17:13] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:17:26] "[35m[1mGET /dbproj/song HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:20:00] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:20:03] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:28:55] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:28:59] "[35m[1mGET /dbproj/song HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:30:36] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:30:40] "[35m[1mGET /dbproj/song HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:31:37] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:31:41] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:36:05] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:36:09] "[31m[1mGET /dbproj/song HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:36:25] "[33mGET /dbproj/song{keyword} HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:36:41] "[33mGET /dbproj/song{"Bacalhau"} HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:36:59] "[33mGET /dbproj/song{keyword} HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:38:05] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:38:08] "[33mGET /dbproj/song{keyword} HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:38:21] "[31m[1mGET /dbproj/song HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:39:37] "[33mGET /dbproj/song{"Bacalhau"} HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:39:45] "[33mGET /dbproj/song/{"Bacalhau"} HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 18:41:00] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:00:45] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:00:51] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:02:18] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:02:29] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:03:38] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:03:42] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:05:41] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:05:44] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:07:46] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:07:48] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:16:48] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:17:00] "[33mGET /dbproj/artist_info/{1} HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:19:27] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:invalid input syntax for type bigint: "<1>"
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '<1>')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:19:48] "[35m[1mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:20:49] "[35m[1mGET /dbproj/artist_info/1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:21:42] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:21:45] "[33mGET /dbproj/artist_info/1 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:21:51] "[33mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:22:29] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:22:32] "[35m[1mGET /dbproj/artist_info/1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:23:53] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:24:02] "[35m[1mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:24:17] "[35m[1mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:24:28] "[35m[1mGET /dbproj/artist_info/1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:25:15] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:invalid input syntax for type bigint: "1<"
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '1<')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:25:18] "[35m[1mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:30:01] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:30:03] "[35m[1mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:30:50] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/<artist_id>              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:30:52] "[35m[1mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:35:02] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:35:04] "[33mGET /dbproj/artist_info/<1> HTTP/1.1[0m" 404 -
+INFO:app:###              DEMO: GET /artist_info              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:35:12] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:35:41] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:invalid input syntax for type bigint: ""
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:35:44] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:36:05] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:can't adapt type 'type'
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:36:08] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:36:51] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:36:54] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:37:30] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:invalid input syntax for type bigint: ""
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:37:32] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:38:59] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:string index out of range
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:39:07] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:40:28] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:string index out of range
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:40:42] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:44:41] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:invalid input syntax for type bigint: ""
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:44:44] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:46:57] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:invalid input syntax for type bigint: ""
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:47:01] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:invalid input syntax for type bigint: ""
+LINE 1: SELECT EXISTS (SELECT 1 FROM artist WHERE person_id = '')
+                                                              ^
+
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:47:32] "[35m[1mGET /dbproj/artist_info HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:50:25] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:50:28] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:50:41] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:50:48] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:51:06] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:51:31] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:51:36] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:52:27] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:52:38] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song/              ###
+ERROR:app:name 'keyword' is not defined
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:53:36] "[35m[1mGET /dbproj/song HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:53:59] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:55:21] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:56:40] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:56:59] "GET /dbproj/song HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:59:18] "GET /dbproj/song?keyword=ola HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:59:26] "GET /dbproj/song?keyword=Bcalhau HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 19:59:33] "GET /dbproj/song?keyword=Bacalhau HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:01:18] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:01:46] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:02:20] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:02:56] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:03:02] "[31m[1mGET /dbproj/artist_info HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: GET /artist_info              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:04:41] "[31m[1mGET /dbproj/artist_info HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: GET /artist_info              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:04:47] "[31m[1mGET /dbproj/artist_info HTTP/1.1[0m" 400 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:05:22] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:05:26] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:05:28] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:05:58] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:06:01] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:06:03] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:07:53] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:07:56] "[35m[1mGET /dbproj/artist_info?artist_id=1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:21:15] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:21:18] "[35m[1mGET /dbproj/artist_info<1> HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:27:06] "[33mGET /dbproj/artist_info/1 HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:27:37] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:27:43] "[35m[1mGET /dbproj/artist_info/1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:28:31] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+ERROR:app:tuple indices must be integers or slices, not str
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:28:33] "[35m[1mGET /dbproj/artist_info/1 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:49:42] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:49:55] "GET /dbproj/song/Bacalhau HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:50:00] "GET /dbproj/song/ola HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:50:06] "GET /dbproj/song/Bacalhau HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:50:22] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info              ###
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:51:30] "GET /dbproj/artist_info/2 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:58:15] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/2              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:58:57] "GET /dbproj/artist_info/2 HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/1              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:59:03] "GET /dbproj/artist_info/1 HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /artist_info/2              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:59:08] "GET /dbproj/artist_info/2 HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/Bacalhau              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:59:15] "GET /dbproj/song/Bacalhau HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/OLa              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:59:23] "GET /dbproj/song/OLa HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/Bacalhau              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:59:29] "GET /dbproj/song/Bacalhau HTTP/1.1" 200 -
+INFO:app:###              DEMO: GET /song/Baca              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:59:35] "GET /dbproj/song/Baca HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'simao', 'password': 'simao123'}
+INFO:app:---- artist logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:29:31] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:29:33] "[31m[1mPOST /dbproj/playlist HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:37:23] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:37:47] "[31m[1mPOST /dbproj/playlist HTTP/1.1[0m" 415 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:40:17] "[31m[1mPOST /dbproj/playlist HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 17:52:50] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:27:45] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:27:53] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:28:20] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:28:23] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:36:31] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:36:35] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:37:23] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:37:25] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:37:52] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:37:56] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:39:05] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:39:09] "POST /dbproj/playlist HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:39:31] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:39:35] "POST /dbproj/playlist HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:47:54] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Drillzao', 'visibility': 'public', 'songs': [13, 15]}
+INFO:app:---- new playlist added  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:47:57] "POST /dbproj/playlist HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:50:56] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Funkao', 'visibility': 'public', 'songs': [14]}
+INFO:app:---- new playlist added  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:51:37] "POST /dbproj/playlist HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Funkao', 'visibility': 'public', 'songs': [14]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:56:26] "[31m[1mPOST /dbproj/playlist HTTP/1.1[0m" 400 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Mczada', 'visibility': 'public', 'songs': [13]}
+INFO:app:---- new playlist added  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 18:56:46] "POST /dbproj/playlist HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:02:31] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Mczadas', 'visibility': 'private', 'songs': [14]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:02:46] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:03:30] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Mczadas', 'visibility': 'private', 'songs': [14]}
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:03:33] "[35m[1mPOST /dbproj/playlist HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:werkzeug: * Detected change in 'c:\\Users\\pbrit\\Documents\\GitHub\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 370-778-157
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'joao', 'password': 'joao123'}
+INFO:app:---- consumer logged in  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:04:16] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'Mczadas', 'visibility': 'private', 'songs': [14]}
+INFO:app:---- new playlist added  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:04:18] "POST /dbproj/playlist HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /playlist              ###
+DEBUG:app:payload: {'playlist_name': 'ALL', 'visibility': 'public', 'songs': [13, 14, 15]}
+INFO:app:---- new playlist added  ----
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 19:06:01] "POST /dbproj/playlist HTTP/1.1" 200 -

@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from datetime import date
 import logging
 import psycopg2
 import time
@@ -923,12 +924,132 @@ def create_card():
         }
         cur.execute("rollback")
 
-    finally:
-        if con is not None:
-            con.close()
+@app.route('/dbproj/playlist', methods=['POST'])
+def create_playlist():
+    app.logger.info("###              DEMO: POST /playlist              ###")
 
-    return jsonify(result)
+    # login and artist verification
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+            "status": 400,
+            "errors": "Missing token",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+            "status": 400,
+            "errors": "Invalid token or token expired",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    user_type = payload['user_type']
+    consumer_id = payload['user_id']
+
+    if user_type != 'consumer':
+        result = {
+            "status": 400,
+            "errors": "Only consumers can create playlists",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    payload = request.get_json()
+    app.logger.debug(f'payload: {payload}')
+
+    con = db_connection()
+    cur = con.cursor()
+
+    # Find if consumer is premium
+    cur.execute("SELECT consumer_person_id FROM consumer_subscription_transactions WHERE consumer_person_id = %s", (consumer_id,))
+    premium = bool(cur.fetchone())
+
+    if not premium:
+        result = {
+            "status": 400,
+            "errors": "Only premium consumers can create playlists",
+            "results": None
+        }
+        return jsonify(result), 400
     
+    cur.execute("""SELECT date_start, date_finish
+                FROM subscription_transactions AS st
+                LEFT JOIN consumer_subscription_transactions AS cst ON cst.subscription_transactions_subs_id = st.subs_id""")
+    
+    subscription_data = cur.fetchone()
+
+    # get actual data
+    today = date.today()
+
+    if subscription_data and (today < subscription_data[0] or today > subscription_data[1]):
+        result = {
+            "status": 400,
+            "errors": "Only premium consumers can create playlists",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    cur.execute("""SELECT name FROM person
+                WHERE id = %s""", (consumer_id,))
+
+    name = cur.fetchone()
+
+    if payload["visibility"] == "public":
+        visib = 1
+    else:
+        visib = 0
+
+    if payload["playlist_name"] != "top10":
+        top = 0
+    else:
+        top = 1
+
+    # Check if the consumer already has a playlist with the given name
+    cur.execute("""SELECT COUNT(*) FROM playlist
+                WHERE creator = %s AND name = %s""", (name, payload["playlist_name"]))
+    
+    count = cur.fetchone()[0]
+
+    if count > 0:
+        result = {
+            "status": 400,
+            "errors": "A playlist with the given name already exists",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    statement = """INSERT INTO playlist(name, creator, public, top_ten) 
+                    VALUES (%s, %s, %s, %s)"""
+    values = (payload["playlist_name"], name, bool(visib), bool(top))
+
+    cur.execute(statement, values)
+
+    cur.execute("""SELECT playlist_id FROM playlist
+                WHERE creator = %s AND name = %s""", (name, payload["playlist_name"]))
+    
+    playlist_id = cur.fetchone()[0]
+
+    # Update song_playlist table with ISMN and playlist_id
+    for ismn in payload["songs"]:
+        cur.execute("""INSERT INTO song_playlist(song_ismn, playlist_playlist_id) 
+                    VALUES (%s, %s)""", (ismn, playlist_id))
+
+    result = {
+            "status": 200,
+            "errors": None,
+            "results": playlist_id
+        }
+        
+    cur.execute("commit")
+    app.logger.info("---- new playlist added  ----")
+    return jsonify(result)
+
 if __name__ == "__main__":
     # Set up the logging
     logging.basicConfig(filename="log_file.log")

@@ -71,8 +71,6 @@ def register():
 
     app.logger.debug(f'payload: {payload}')
 
-    cur.execute("begin transaction")
-    
     # verify if username already exists
     cur.execute("""SELECT username
                      FROM person 
@@ -88,8 +86,10 @@ def register():
         }
         return jsonify(result), 400
     
+    cur.execute("begin transaction")
+    
     # insert consumer data
-    if 'label_id' not in payload and 'artistic_name' not in payload:
+    if 'label_id' not in payload or 'artistic_name' not in payload:
         statement = """INSERT INTO person(username, password, email, name, birthdate) 
                        VALUES (%s, %s, %s, %s, %s)"""
         values = (payload["username"], payload["password"], payload["email"], payload["name"], payload["birthdate"])
@@ -139,8 +139,8 @@ def register():
 
         token = token.split('Bearer ')[-1]
 
-        payload = verify_token(token)
-        if not payload:
+        verification = verify_token(token)
+        if not verification:
             result = {
                     "status": 400,
                     "errors": "Invalid token or token expired",
@@ -148,8 +148,8 @@ def register():
                 }
             return jsonify(result), 400
 
-        user_type = payload['user_type']
-        admin_id = payload['user_id']
+        user_type = verification['user_type']
+        admin_id = verification['user_id']
 
         if user_type != 'administrator':
             result = {
@@ -174,7 +174,7 @@ def register():
             artist_id = artist_id[0]
 
             cur.execute("""INSERT INTO artist (artistic_name, record_label_label_id, administrator_person_id, person_id)
-            VALUES (%s)""", (payload["artistic_name"], payload["label_id"], admin_id, artist_id))
+            VALUES (%s, %s, %s, %s)""", (payload["artistic_name"], payload["label_id"], admin_id, artist_id))
 
             result = {
                 "status": 200,

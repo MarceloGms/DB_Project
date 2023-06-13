@@ -3951,3 +3951,208 @@ INFO:app:###              DEMO: POST /card              ###
 DEBUG:app:payload: {'number_cards': 3, 'card_price': 50}
 INFO:app:---- cards added ----
 INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 22:59:52] "POST /dbproj/card HTTP/1.1" 200 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'username': 'sim', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003'}
+INFO:app:---- new consumer registered  ----
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 13:55:02] "POST /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: PUT /user              ###
+DEBUG:app:payload: {'username': 'mars', 'password': '123'}
+INFO:app:---- administrator logged in  ----
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 13:55:44] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'username': 'pedran', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003', 'artistic_name': 'mc noob gamer', 'label_id': 1}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 13:56:08] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'username': 'pedran', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003', 'artistic_name': 'mc noob gamer', 'label_id': 1}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 13:57:39] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'username': 'pedran', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003', 'artistic_name': 'mc noob gamer', 'label_id': 1}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:00:40] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'artistic_name': 'mc noob gamer', 'label_id': 1, 'username': 'pedran', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:03:33] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'artistic_name': 'mc noob gamer', 'label_id': 1, 'username': 'pedran', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:07:46] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'artistic_name': 'mc noob gamer', 'label_id': 1, 'username': 'pedran', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:10:13] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'artistic_name': 'mc noob gamer', 'label_id': 1, 'username': 'pedran', 'password': '123', 'email': 'aaa', 'name': 'pedro', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:10:41] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'artistic_name': 'mc noob gamer', 'label_id': 1, 'username': 'bbb', 'password': '123', 'email': 'aaa', 'name': 'bbb', 'birthdate': '22/06/2003'}
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:14:20] "[35m[1mPOST /dbproj/user HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'artistic_name': 'mc noob gamer', 'label_id': 1, 'username': 'bbb', 'password': '123', 'email': 'aaa', 'name': 'bbb', 'birthdate': '22/06/2003'}
+ERROR:app:not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:16:49] "POST /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:werkzeug: * Detected change in 'c:\\Users\\marsg\\OneDrive\\Ambiente de Trabalho\\BD\\DB_Project\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:app:
+---------------------------------------------------------------
+API v1.0 online: http://localhost:8080/dbproj/
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-639-385
+INFO:app:###              DEMO: POST /user              ###
+DEBUG:app:payload: {'artistic_name': 'mc noob gamer', 'label_id': 1, 'username': 'bbb', 'password': '123', 'email': 'aaa', 'name': 'bbb', 'birthdate': '22/06/2003'}
+INFO:app:---- new artist registered  ----
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2023 14:17:35] "POST /dbproj/user HTTP/1.1" 200 -

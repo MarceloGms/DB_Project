@@ -8,9 +8,8 @@
 ## =============================================
 ##
 ## Authors: 
-##   Marcelo Rodrigues Gomes nº2021222994
-##   
-##   
+##   Marcelo Gomes nº2021222994
+##   Pedro Brites nº2021226319
 ##   University of Coimbra
 
 from flask import Flask, jsonify, request

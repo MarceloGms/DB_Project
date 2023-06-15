@@ -46,14 +46,14 @@ CREATE TABLE playlist (
 );
 
 CREATE TABLE comment (
-	comment_id		 BIGSERIAL,
-	content			 VARCHAR(512) NOT NULL,
-	comment_date		 DATE NOT NULL,
-	consumer_person_id	 BIGINT,
-	comment_comment_id	 BIGINT NOT NULL,
-	comment_consumer_person_id BIGINT NOT NULL,
-	song_ismn			 BIGINT NOT NULL,
-	PRIMARY KEY(comment_id,consumer_person_id)
+    comment_id         BIGSERIAL,
+    content             VARCHAR(512) NOT NULL,
+    comment_date         DATE NOT NULL,
+    consumer_person_id     BIGINT NOT NULL,
+    comment_comment_id     BIGINT,
+    comment_consumer_person_id BIGINT,
+    song_ismn             BIGINT NOT NULL,
+    PRIMARY KEY(comment_id,consumer_person_id)
 );
 
 CREATE TABLE record_label (
@@ -130,8 +130,8 @@ CREATE TABLE subscription_transactions_pre_paid_card (
 
 CREATE TABLE song_album (
 	song_ismn	 BIGINT,
-	album_album_id BIGINT NOT NULL,
-	PRIMARY KEY(song_ismn)
+	album_album_id BIGINT,
+	PRIMARY KEY(song_ismn,album_album_id)
 );
 
 CREATE TABLE song_playlist (

@@ -1,3 +1,18 @@
+## =============================================
+## ============== Bases de Dados ===============
+## ============== LEI  2022/2023 ===============
+## =============================================
+## =============================================
+## === Department of Informatics Engineering ===
+## =========== University of Coimbra ===========
+## =============================================
+##
+## Authors: 
+##   Marcelo Rodrigues Gomes nº2021222994
+##   
+##   
+##   University of Coimbra
+
 from flask import Flask, jsonify, request
 from datetime import date
 import logging
@@ -1007,6 +1022,174 @@ def create_card():
             con.close()
 
         return jsonify(result)
+    
+@app.route('/dbproj/comments/<int:song_id>', methods=['POST'])
+def create_comment(song_id):
+    app.logger.info("###              DEMO: POST /comments              ###")
+
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+            "status": 400,
+            "errors": "Missing token",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+            "status": 400,
+            "errors": "Invalid token or token expired",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    user_id = payload['user_id']
+
+    payload = request.get_json()
+    app.logger.debug(f'payload: {payload}')
+
+    comment = payload.get("comment")
+
+    if not comment:
+        result = {
+            "status": 400,
+            "errors": "Missing comment",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    con = db_connection()
+    cur = con.cursor()
+
+    # Check if the song exists
+    cur.execute("SELECT COUNT(*) FROM song WHERE ismn = %s", (song_id,))
+    count = cur.fetchone()[0]
+
+    if count == 0:
+        result = {
+            "status": 400,
+            "errors": "Song does not exist",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    today = date.today()
+    d1 = today.strftime("%d/%m/%Y")
+    cur.execute('LOCK TABLE comment IN ACCESS EXCLUSIVE MODE')
+
+    # Insert the comment
+    statement = """INSERT INTO comment(content, comment_date, consumer_person_id, comment_comment_id, comment_consumer_person_id, song_ismn)
+                    VALUES (%s, %s, %s, 20, 20, %s)"""
+    values = (comment, d1, user_id, song_id)
+
+    cur.execute(statement, values)
+    comment_id = cur.lastrowid
+
+    result = {
+        "status": 200,
+        "errors": None,
+        "results": comment_id
+    }
+
+    con.commit()
+    app.logger.info("---- new comment added ----")
+    return jsonify(result)
+
+@app.route('/dbproj/comments/<int:song_id>/<int:parent_comment_id>', methods=['POST'])
+def create_reply(song_id, parent_comment_id):
+    app.logger.info("###              DEMO: POST /comments/reply              ###")
+
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+            "status": 400,
+            "errors": "Missing token",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+            "status": 400,
+            "errors": "Invalid token or token expired",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    user_id = payload['user_id']
+
+    payload = request.get_json()
+    app.logger.debug(f'payload: {payload}')
+
+    comment = payload.get("comment")
+
+    if not comment:
+        result = {
+            "status": 400,
+            "errors": "Missing comment",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    con = db_connection()
+    cur = con.cursor()
+
+    # Check if the song exists
+    cur.execute("SELECT COUNT(*) FROM song WHERE song_id = %s", (song_id,))
+    count = cur.fetchone()[0]
+
+    if count == 0:
+        result = {
+            "status": 400,
+            "errors": "Song does not exist",
+            "results": None
+        }
+        return jsonify(result), 400
+
+    cur.execute('SELECT id FROM consumer WHERE id = %s', (user_id, ))
+
+    # Check if the parent comment exists
+    cur.execute("SELECT COUNT(*), consumer_person_id FROM comment WHERE comment_id = %s", (parent_comment_id,))
+    count = cur.fetchone()[0]
+    person_id = cur.fetchone()[1]
+
+    if count == 0:
+        result = {
+            "status": 400,
+            "errors": "Parent comment does not exist",
+            "results": None
+        }
+        return jsonify(result), 400
+    
+    today = date.today()
+    d1 = today.strftime("%d/%m/%Y")
+    
+    cur.execute('LOCK TABLE comment IN ACCESS EXCLUSIVE MODE')
+
+    # Insert the reply comment
+    statement = """INSERT INTO comment(content, comment_date, consumer_person_id, consumer_comment_id, comment_consumer_person_id, song_ismn)
+                    VALUES (%s, %s, %s, %s, %s, %s)"""
+    values = (comment, today, user_id, parent_comment_id, person_id, song_id)
+
+    cur.execute(statement, values)
+    comment_id = cur.lastrowid
+
+    result = {
+        "status": 200,
+        "errors": None,
+        "results": comment_id
+    }
+
+    con.commit()
+    app.logger.info("---- new reply comment added ----")
+    return jsonify(result)
 
 if __name__ == "__main__":
     # Set up the logging

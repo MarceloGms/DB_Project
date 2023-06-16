@@ -37,12 +37,12 @@ CREATE TABLE song (
 );
 
 CREATE TABLE playlist (
-	playlist_id BIGSERIAL,
-	name	 VARCHAR(512) NOT NULL,
-	creator	 VARCHAR(512) NOT NULL,
-	public	 BOOL NOT NULL,
-	top_ten	 BOOL NOT NULL DEFAULT FALSE,
-	PRIMARY KEY(playlist_id)
+    playlist_id BIGSERIAL,
+    name     VARCHAR(512) NOT NULL,
+    creator     VARCHAR(512) NOT NULL,
+    public     BOOL NOT NULL,
+    top_ten     BOOL NOT NULL DEFAULT FALSE,
+    PRIMARY KEY(playlist_id)
 );
 
 CREATE TABLE comment (
@@ -174,3 +174,48 @@ ALTER TABLE song_album ADD CONSTRAINT song_album_fk2 FOREIGN KEY (album_album_id
 ALTER TABLE song_playlist ADD CONSTRAINT song_playlist_fk1 FOREIGN KEY (song_ismn) REFERENCES song(ismn);
 ALTER TABLE song_playlist ADD CONSTRAINT song_playlist_fk2 FOREIGN KEY (playlist_playlist_id) REFERENCES playlist(playlist_id);
 
+-- Create the trigger function
+CREATE OR REPLACE FUNCTION update_top_10_playlist()
+  RETURNS TRIGGER AS $$
+BEGIN
+  -- Check if the logged consumer exists and is playing the song
+  IF EXISTS (
+    SELECT 1
+    FROM consumer
+    WHERE person_id = NEW.consumer_person_id
+  ) THEN
+    -- Insert or update the playback in the activity table
+    INSERT INTO activity (n_listens, listen_date, song_ismn, consumer_person_id)
+    VALUES (1, CURRENT_DATE, NEW.song_id, NEW.consumer_person_id)
+    ON CONFLICT (listen_date, song_ismn, consumer_person_id) DO UPDATE
+    SET n_listens = activity.n_listens + 1;
+    
+    -- Update the top 10 playlist of the logged consumer
+    WITH top_songs AS (
+      SELECT song_ismn
+      FROM (
+        SELECT song_ismn, COUNT(*) AS listens
+        FROM activity
+        WHERE consumer_person_id = NEW.consumer_person_id
+          AND listen_date >= (CURRENT_DATE - INTERVAL '30 days')
+        GROUP BY song_ismn
+      ) AS sub
+      ORDER BY listens DESC
+      LIMIT 10
+    )
+    UPDATE playlist
+    SET song_ismn = top_songs.song_ismn
+    FROM top_songs
+    WHERE playlist.creator = NEW.consumer_person_id
+      AND playlist.top_ten = TRUE;
+  END IF;
+
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create the trigger
+CREATE TRIGGER play_song_trigger
+AFTER INSERT ON activity
+FOR EACH ROW
+EXECUTE FUNCTION update_top_10_playlist();

@@ -6,7 +6,7 @@ The user interacts with the web server and the web server interacts with the dat
 Check Final_report__.pdf for installation guide and user manual.
 
 # Authors
-Marcelo Gomes
-https://github.com/MarceloGms
-Pedro Brites
-https://github.com/brites35
+*Marcelo Gomes
+*https://github.com/MarceloGms
+*Pedro Brites
+*https://github.com/brites35

@@ -174,48 +174,55 @@ ALTER TABLE song_album ADD CONSTRAINT song_album_fk2 FOREIGN KEY (album_album_id
 ALTER TABLE song_playlist ADD CONSTRAINT song_playlist_fk1 FOREIGN KEY (song_ismn) REFERENCES song(ismn);
 ALTER TABLE song_playlist ADD CONSTRAINT song_playlist_fk2 FOREIGN KEY (playlist_playlist_id) REFERENCES playlist(playlist_id);
 
--- Create the trigger function
-CREATE OR REPLACE FUNCTION update_top_10_playlist()
-  RETURNS TRIGGER AS $$
-BEGIN
-  -- Check if the logged consumer exists and is playing the song
-  IF EXISTS (
-    SELECT 1
-    FROM consumer
-    WHERE person_id = NEW.consumer_person_id
-  ) THEN
-    -- Insert or update the playback in the activity table
-    INSERT INTO activity (n_listens, listen_date, song_ismn, consumer_person_id)
-    VALUES (1, CURRENT_DATE, NEW.song_id, NEW.consumer_person_id)
-    ON CONFLICT (listen_date, song_ismn, consumer_person_id) DO UPDATE
-    SET n_listens = activity.n_listens + 1;
-    
-    -- Update the top 10 playlist of the logged consumer
-    WITH top_songs AS (
-      SELECT song_ismn
-      FROM (
-        SELECT song_ismn, COUNT(*) AS listens
-        FROM activity
-        WHERE consumer_person_id = NEW.consumer_person_id
-          AND listen_date >= (CURRENT_DATE - INTERVAL '30 days')
-        GROUP BY song_ismn
-      ) AS sub
-      ORDER BY listens DESC
-      LIMIT 10
-    )
-    UPDATE playlist
-    SET song_ismn = top_songs.song_ismn
-    FROM top_songs
-    WHERE playlist.creator = NEW.consumer_person_id
-      AND playlist.top_ten = TRUE;
-  END IF;
+-- Trigger that creates or updates the consumer's playlist top 10 most listened songs in the last 30 days
+CREATE OR REPLACE FUNCTION top_ten_playlist() 
+RETURNS TRIGGER AS $$
 
-  RETURN NEW;
-END;
+  DECLARE
+    id_top_play  BIGINT;
+    s_ismn   BIGINT;
+
+  BEGIN
+
+    SELECT playlist.playlist_id INTO id_top_play
+    FROM playlist
+    LEFT JOIN consumer_playlist ON playlist.playlist_id = consumer_playlist.playlist_playlist_id
+    WHERE consumer_playlist.consumer_person_id = NEW.consumer_person_id 
+	AND playlist.top_ten = TRUE;
+
+    IF NOT FOUND THEN
+      INSERT INTO playlist (name, creator, public, top_ten) 
+	  VALUES ('Top_10', NEW.consumer_person_id, TRUE, TRUE) RETURNING playlist_id INTO id_top_play;
+
+      INSERT INTO consumer_playlist (consumer_person_id, playlist_playlist_id) 
+	  VALUES (NEW.consumer_person_id, id_top_play);
+    END IF;
+
+    DELETE FROM song_playlist 
+	WHERE playlist_playlist_id = id_top_play;
+    
+    FOR s_ismn IN
+
+      SELECT song_ismn, SUM(n_listens)
+      FROM activity
+      WHERE consumer_person_id = NEW.consumer_person_id 
+	  AND listen_date > (CURRENT_DATE - INTERVAL '30 days')
+      GROUP BY song_ismn
+      ORDER BY SUM(n_listens) DESC
+      LIMIT 10
+    LOOP
+
+      INSERT INTO song_playlist (song_ismn, playlist_playlist_id) 
+	  VALUES (s_ismn, id_top_play);
+
+    END LOOP;
+    
+    RETURN NEW;
+  END;
+
 $$ LANGUAGE plpgsql;
 
--- Create the trigger
-CREATE TRIGGER play_song_trigger
-AFTER INSERT ON activity
+CREATE OR REPLACE TRIGGER top_ten_playlist_trigger
+AFTER INSERT OR UPDATE ON activity
 FOR EACH ROW
-EXECUTE FUNCTION update_top_10_playlist();
+EXECUTE FUNCTION top_ten_playlist();

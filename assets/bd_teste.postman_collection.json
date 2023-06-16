@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "da589e57-f6e9-42cc-9dc9-98653c77a325",
+		"name": "bd_teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27862655",
+		"_collection_link": "https://martian-star-862472.postman.co/workspace/Team-Workspace~39e13099-bccb-4fcf-8e6d-e21a92cc95c9/collection/27863006-da589e57-f6e9-42cc-9dc9-98653c77a325?action=share&creator=27862655&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "register_consumer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\r",
+							"    \"username\": \"marcelo\",\r",
+							"    \r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"rui\",\r\n    \"password\": \"123\",\r\n    \"email\": \"aaa\",\r\n    \"name\": \"rui\",\r\n    \"birthdate\": \"22/06/2003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/user"
+			},
+			"response": []
+		},
+		{
+			"name": "register_artist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3R5cGUiOiJhZG1pbmlzdHJhdG9yIn0.3zhx3kwxh8XQAavnYppVjmlhaQwOtxFW9BH-umGjJTE"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"artistic_name\": \"mc noob gamer\",\r\n    \"label_id\": 1,\r\n    \"username\": \"bbb\",\r\n    \"password\": \"123\",\r\n    \"email\": \"aaa\",\r\n    \"name\": \"bbb\",\r\n    \"birthdate\": \"22/06/2003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/user"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"simao\",\r\n    \"password\": \"simao123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/user"
+			},
+			"response": []
+		},
+		{
+			"name": "add_song",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3R5cGUiOiJjb25zdW1lciJ9.Hmuq5eb936dzpc_IiFajDclSPALym0rQ52znAhOW11w"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Azeite no Bacalhau\",\r\n    \"genre\": \"Rap\",\r\n    \"release_date\": \"05/05/2010\",\r\n    \"duration\": 210,\r\n    \"publisher\": 1222,\r\n    \"other_artists\": [2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/song"
+			},
+			"response": []
+		},
+		{
+			"name": "add_album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/dbproj/album"
+			},
+			"response": []
+		},
+		{
+			"name": "search_song",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3R5cGUiOiJhcnRpc3QifQ.bCAVgDoMlK1y_DufG6rJ_LIwzsxcsf4KyDp_cvDuHpY"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keyword\": \"Bacalhau\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/song"
+			},
+			"response": []
+		},
+		{
+			"name": "artist_info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX3R5cGUiOiJhcnRpc3QifQ.bCAVgDoMlK1y_DufG6rJ_LIwzsxcsf4KyDp_cvDuHpY"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"artist_id\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/artist_info"
+			},
+			"response": []
+		},
+		{
+			"name": "subscribe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"period\": \"\",\r\n    \"cards\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/subscription"
+			},
+			"response": []
+		},
+		{
+			"name": "create_playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VyX3R5cGUiOiJjb25zdW1lciJ9.nny7IE3a7xSvZ8wMIGvBOFE4HrdEHOzNghEg5RenzGU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"playlist_name\": \"ALL\",\r\n    \"visibility\": \"public\",\r\n    \"songs\": [13, 14, 15]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/playlist"
+			},
+			"response": []
+		},
+		{
+			"name": "gen_card",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number_cards\": 3,\r\n    \"card_price\": 25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/dbproj/card"
+			},
+			"response": []
+		},
+		{
+			"name": "create_comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/dbproj/"
+			},
+			"response": []
+		},
+		{
+			"name": "reply_comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/dbproj/"
+			},
+			"response": []
+		},
+		{
+			"name": "gen_report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJ1c2VyX3R5cGUiOiJjb25zdW1lciJ9.QCWg3QGpQmaqgDYgrF2oikb5ki6Yp4gDTxy5VG0y1Cg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/dbproj/report/2023-7"
+			},
+			"response": []
+		},
+		{
+			"name": "play_song",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJ1c2VyX3R5cGUiOiJjb25zdW1lciJ9.a2WuWN7Ep5HuNgluC4fHxgudl0u-mCuQlqtWAhT_D4g"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/dbproj/1"
+			},
+			"response": []
+		}
+	]
+}

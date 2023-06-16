@@ -41,7 +41,7 @@ CREATE TABLE playlist (
 	name	 VARCHAR(512) NOT NULL,
 	creator	 VARCHAR(512) NOT NULL,
 	public	 BOOL NOT NULL,
-	top_ten	 BOOL NOT NULL,
+	top_ten	 BOOL NOT NULL DEFAULT FALSE,
 	PRIMARY KEY(playlist_id)
 );
 
@@ -91,11 +91,12 @@ CREATE TABLE subscription_transactions (
 );
 
 CREATE TABLE activity (
+	id		 BIGSERIAL,
 	n_listens		 SMALLINT NOT NULL,
 	listen_date	 DATE NOT NULL,
 	song_ismn		 BIGINT,
 	consumer_person_id BIGINT,
-	PRIMARY KEY(song_ismn,consumer_person_id)
+	PRIMARY KEY(id,song_ismn,consumer_person_id)
 );
 
 CREATE TABLE consumer_pre_paid_card (

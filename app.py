@@ -301,20 +301,19 @@ def login():
 
         app.logger.info(f"---- {user_type} logged in  ----")
 
-    except Exception as e:
-        app.logger.error(e)
-        con.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        app.logger.error(error)
         result = {
             "status": 500,
             "errors": "Internal Server Error",
             "results": None
         }
-        return jsonify(result), 500
-    
+        cur.execute("rollback")
+
     finally:
         if con is not None:
             con.close()
-        
+
         return jsonify(result)
     
 # login required operations
@@ -591,19 +590,19 @@ def search_song(keyword):
         }
 
         app.logger.info("---- got songs  ----")
-    except Exception as e:
-            app.logger.error(e)
-            con.close()
-            result = {
-                "status": 500,
-                "errors": "Internal Server Error",
-                "results": None
-            }
-            return jsonify(result), 500
-    
+    except (Exception, psycopg2.DatabaseError) as error:
+        app.logger.error(error)
+        result = {
+            "status": 500,
+            "errors": "Internal Server Error",
+            "results": None
+        }
+        cur.execute("rollback")
+
     finally:
         if con is not None:
             con.close()
+
         return jsonify(result)
 
 @app.route('/dbproj/artist_info/<artist_id>', methods=['GET'])
@@ -688,19 +687,19 @@ def artist_info(artist_id):
         }
 
         app.logger.info("---- got artist ----")
-    except Exception as e:
-        app.logger.error(e)
-        con.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        app.logger.error(error)
         result = {
             "status": 500,
             "errors": "Internal Server Error",
             "results": None
         }
-        return jsonify(result), 500
-    
+        cur.execute("rollback")
+
     finally:
         if con is not None:
             con.close()
+
         return jsonify(result)
     
 @app.route('/dbproj/subscription', methods=['POST'])
@@ -955,7 +954,7 @@ def create_playlist():
             }
             return jsonify(result), 400
 
-        cur.execute("""SELECT name FROM person
+        cur.execute("""SELECT username FROM person
                     WHERE id = %s""", (consumer_id,))
 
         name = cur.fetchone()
@@ -1027,6 +1026,88 @@ def create_playlist():
 
     return jsonify(result)
 
+@app.route('/dbproj/<song_id>', methods=['PUT'])
+def play_song(song_id):
+    app.logger.info(f'###              DEMO: PUT /{song_id}              ###')
+
+    # login and consumer verification
+    token = request.headers.get('Authorization')
+    if not token:
+        result = {
+                "status": 400,
+                "errors": "Missing token",
+            }
+        return jsonify(result), 400
+
+    token = token.split('Bearer ')[-1]
+
+    payload = verify_token(token)
+    if not payload:
+        result = {
+                "status": 400,
+                "errors": "Invalid token or token expired",
+            }
+        return jsonify(result), 400
+
+    user_type = payload['user_type']
+    consumer_id = payload['user_id']
+
+    if user_type != 'consumer':
+        result = {
+                "status": 400,
+                "errors": "Only consumers can play songs",
+            }
+        return jsonify(result), 400
+
+    app.logger.debug(f'payload: {payload}')
+
+    con = db_connection()
+    cur = con.cursor()
+
+    # operations
+    try:
+        cur.execute("begin transaction")
+        cur.execute("SELECT ismn FROM song WHERE ismn = %s", (song_id, ))
+        if cur.fetchone() is None:
+            result = {
+                    "status": 400,
+                    "errors": "The song doesnt exist",
+                }
+            return jsonify(result), 400
+        
+        cur.execute("SELECT id FROM activity WHERE consumer_person_id = %s AND song_ismn = %s AND listen_date = CURRENT_DATE", (consumer_id, song_id))
+        id = cur.fetchone()
+
+        # fist time listening to this song today
+        if id is None:
+            cur.execute("INSERT INTO activity (n_listens, listen_date, song_ismn, consumer_person_id) VALUES (%s, CURRENT_DATE, %s, %s)", (1, song_id, consumer_id))
+
+        else:
+            cur.execute("UPDATE activity SET n_listens = n_listens + 1 WHERE id = %s", (id, ))
+
+        result = {
+            "status": 200,
+            "errors": None
+        }
+
+        cur.execute("commit")
+        app.logger.info("--- success ---")
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        app.logger.error(error)
+        result = {
+            "status": 500,
+            "errors": "Internal Server Error",
+            "results": None
+        }
+        cur.execute("rollback")
+
+    finally:
+        if con is not None:
+            con.close()
+
+        return jsonify(result)
+        
 # generate a 16 digit card code
 def gen_code():
     return ''.join(random.choices(string.ascii_letters + string.digits, k=16)).upper()
@@ -1062,7 +1143,7 @@ def create_card():
     if user_type != 'administrator':
         result = {
                 "status": 400,
-                "errors": "Only consumers can subscribe to premium",
+                "errors": "Only admins can create cards",
                 "results": None
             }
         return jsonify(result), 400
@@ -1403,19 +1484,19 @@ def generate_monthly_report(year_month):
                 year -= 1
 
         app.logger.info("---- generated 12 month report ----")
-    except Exception as e:
-        app.logger.error(e)
-        con.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        app.logger.error(error)
         result = {
             "status": 500,
             "errors": "Internal Server Error",
             "results": None
         }
-        return jsonify(result), 500
+        cur.execute("rollback")
 
     finally:
         if con is not None:
             con.close()
+
         return jsonify(result)
 
 if __name__ == "__main__":

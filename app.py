@@ -789,10 +789,19 @@ def subscribe():
         end_date = start_date + timedelta(days=period[payload["period"]][0])
         cur.execute("""INSERT INTO subscription_transactions (plan, date_start, date_finish, transactions_transaction_date)
                         VALUES (%s, %s, %s, %s)""", (payload["period"], start_date, end_date, start_date))
+        
+        cur.execute('SELECT subs_id FROM subscription_transactions ORDER BY subs_id DESC LIMIT 1')
         subs_id = cur.fetchone()[0]
 
-        cur.execute("LOCK TABLE pre_paid_card IN EXCLUSIVE MODE")
-        
+        if subs_id is None:
+            result = {
+                "status": 400,
+                "errors": "Failed to retrieve subscription ID",
+                "results": None
+            }
+            cur.execute("rollback")
+            return jsonify(result), 400
+
         cur.execute("""SELECT id_card 
                     FROM pre_paid_card
                     WHERE id_card = ANY(%s) FOR UPDATE""", (payload["cards"], ))
@@ -810,15 +819,15 @@ def subscribe():
                 }
                 cur.execute("rollback")
                 return jsonify(result), 400
-
+  
             cur.execute("SELECT consumer_person_id FROM consumer_pre_paid_card WHERE pre_paid_card_id_card = %s", (card,))
-            owner = cur.fetchone()[0]
+            owner = cur.fetchone()
 
             if owner is None:
                 cur.execute("""INSERT INTO consumer_pre_paid_card (consumer_person_id, pre_paid_card_id_card)
                                 VALUES (%s, %s)""", (user_id, card))
-
-            elif owner != user_id:
+                
+            elif owner[0] != user_id:
                 result = {
                     "status": 400,
                     "errors": f'card {card} already owned',
@@ -826,6 +835,7 @@ def subscribe():
                 }
                 cur.execute("rollback")
                 return jsonify(result), 400
+            
             
             while True:
                 amount-=1
@@ -835,6 +845,8 @@ def subscribe():
                     break
             
             cur.execute('UPDATE pre_paid_card SET card_price = %s WHERE id_card = %s', (amount, card))
+            if price == 0:
+                break
 
         cur.execute("INSERT INTO consumer_subscription_transactions (consumer_person_id, subscription_transactions_subs_id) VALUES (%s, %s)", (user_id, subs_id))
 
@@ -918,9 +930,9 @@ def create_playlist():
         cur.execute("begin transaction")
         # Find if consumer is premium
         cur.execute("SELECT consumer_person_id FROM consumer_subscription_transactions WHERE consumer_person_id = %s", (consumer_id,))
-        premium = bool(cur.fetchone())
+        premium = cur.fetchone()
 
-        if not premium:
+        if premium is None:
             result = {
                 "status": 400,
                 "errors": "Only premium consumers can create playlists",
@@ -930,7 +942,7 @@ def create_playlist():
         
         cur.execute("""SELECT date_finish
                     FROM subscription_transactions
-                    LEFT JOIN consumer_subscription_transactions subscription_transactions_subs_id = subs_id
+                    LEFT JOIN consumer_subscription_transactions ON subscription_transactions_subs_id = subs_id
                     WHERE consumer_person_id = %s AND date_finish > CURRENT_DATE""", (consumer_id,))
         
         subscription_data = cur.fetchone()
@@ -1159,7 +1171,6 @@ def create_comment(song_id):
 
     today = date.today()
     d1 = today.strftime("%d/%m/%Y")
-    cur.execute('LOCK TABLE comment IN ACCESS EXCLUSIVE MODE')
 
     # Insert the comment
     statement = """INSERT INTO comment(content, comment_date, consumer_person_id, song_ismn)
@@ -1268,8 +1279,11 @@ def create_reply(song_id, parent_comment_id):
     
     try:
         cur.execute("begin transaction")
-        cur.execute('LOCK TABLE comment IN ACCESS EXCLUSIVE MODE')
 
+        cur.execute("""SELECT comment_id 
+                    FROM comment
+                    WHERE comment_id = %s FOR UPDATE""", (parent_comment_id, ))
+        
         # Insert the reply comment
         statement = """INSERT INTO comment(content, comment_date, consumer_person_id, comment_comment_id, comment_consumer_person_id, song_ismn)
                         VALUES (%s, %s, %s, %s, %s, %s)"""

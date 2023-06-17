@@ -8,6 +8,6 @@ The user interacts with the web server and the web server interacts with the dat
 
 ## Authors
 - Marcelo Gomes
-- https://github.com/MarceloGms
+  - https://github.com/MarceloGms
 - Pedro Brites
-- https://github.com/brites35
+  - https://github.com/brites35
